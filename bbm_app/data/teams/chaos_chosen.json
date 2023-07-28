@@ -1,0 +1,65 @@
+[
+        {
+            "name": "Beastman",
+            "movement": 6,
+            "strength": 3,
+            "agility": 3,
+            "armor": 8,
+            "passing": 4,
+            "cost": 60000,
+            "starting_skills": ["Horns"],
+            "primary_skill_categories": ["General", "Mutation"],
+            "secondary_skill_categories": ["Agility", "Strength", "Passing"]
+        },
+        {
+            "name": "Chaos Chosen",
+            "movement": 5,
+            "strength": 4,
+            "agility": 3,
+            "armor": 9,
+            "passing": 5,
+            "cost": 100000,
+            "starting_skills": [],
+            "primary_skill_categories": ["General", "Mutation", "Strength"],
+            "secondary_skill_categories": ["Agility", "Passing"]
+        },
+        {
+            "name": "Chaos Minotaur",
+            "movement": 5,
+            "strength": 5,
+            "agility": 5,
+            "armor": 9,
+            "passing": null,
+            "cost": 150000,
+            "starting_skills": ["Frenzy", "Horns", "Mighty Blow (1+)"],
+            "traits": ["Loner", "Thick Skull", "Wild Animal"],
+            "primary_skill_categories": ["Mutation", "Strength"],
+            "secondary_skill_categories": ["General"]
+        },
+        {
+            "name": "Chaos Troll",
+            "cost": 115,
+            "movement": 4,
+            "strength": 5,
+            "agility": 5,
+            "armor": 10,
+            "passing": 5,
+            "skills": ["Mighty Blow (+1)"],
+            "traits": ["Always Hungry", "Loner (4+)","Projectile Vomit", "Really Stupid", "Regeneration", "Throw Team Mate"],
+            "primary_skill_categories": ["Mutation", "Strength"],
+            "secondary_skill_categories": ["Agility"]
+        },
+        {
+            "name": "Chaos Ogre",
+            "cost": 140,
+            "movement": 5,
+            "strength": 5,
+            "agility": 4,
+            "armor": 10,
+            "passing": 5,
+            "skills": ["Mighty Blow (+1)"],
+            "traits": ["Bone Head", "Loner (4+)", "Thick Skull", "Throw Team Mate"],
+            "primary_skill_categories": ["Mutation", "Strength"],
+            "secondary_skill_categories": ["Agility"]
+        }
+]

@@ -1,0 +1,74 @@
+[
+        {
+            "name": "Orc Lineman",
+            "movement": 5,
+            "strength": 3,
+            "agility": 3,
+            "armor": 9,
+            "passing": 4,
+            "cost": 50000,
+            "starting_skills": [],
+            "primary_skill_categories": ["General"],
+            "secondary_skill_categories": ["Strength", "Agility", "Passing"]
+        },
+        {
+            "name": "Orc Goblin",
+            "movement": 6,
+            "strength": 2,
+            "agility": 3,
+            "armor": 7,
+            "passing": 4,
+            "cost": 40000,
+            "starting_skills": ["Dodge", "Right Stuff", "Stunty"],
+            "primary_skill_categories": ["Agility"],
+            "secondary_skill_categories": ["General", "Passing"]
+        },
+        {
+            "name": "Orc Thrower",
+            "movement": 5,
+            "strength": 3,
+            "agility": 3,
+            "armor": 8,
+            "passing": 3,
+            "cost": 70000,
+            "starting_skills": ["Pass", "Sure Hands"],
+            "primary_skill_categories": ["General", "Passing"],
+            "secondary_skill_categories": ["Strength", "Agility"]
+        },
+        {
+            "name": "Orc Black Orc Blocker",
+            "movement": 4,
+            "strength": 4,
+            "agility": 4,
+            "armor": 9,
+            "passing": 5,
+            "cost": 80000,
+            "starting_skills": [],
+            "primary_skill_categories": ["General", "Strength"],
+            "secondary_skill_categories": ["Agility", "Passing"]
+        },
+        {
+            "name": "Orc Blitzer",
+            "movement": 6,
+            "strength": 3,
+            "agility": 3,
+            "armor": 9,
+            "passing": 4,
+            "cost": 80000,
+            "starting_skills": ["Block"],
+            "primary_skill_categories": ["General", "Strength"],
+            "secondary_skill_categories": ["Agility", "Passing"]
+        },
+        {
+            "name": "Orc Troll",
+            "movement": 4,
+            "strength": 5,
+            "agility": 5,
+            "armor": 10,
+            "passing": 5,
+            "cost": 110000,
+            "starting_skills": ["Always Hungry", "Loner", "Mighty Blow (+1)", "Really Stupid", "Regeneration", "Throw Team-Mate"],
+            "primary_skill_categories": ["Strength"],
+            "secondary_skill_categories": ["General", "Agility", "Passing"]
+        }
+]

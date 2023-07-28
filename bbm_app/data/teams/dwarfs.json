@@ -1,0 +1,67 @@
+[
+        {
+            "name": "Dwarf Lineman",
+            "movement": 4,
+            "strength": 3,
+            "agility": 3,
+            "armor": 10,
+            "passing": 4,
+            "cost": 70000,
+            "starting_skills": ["Block", "Tackle"],
+            "traits": ["Thick Skull"],
+            "primary_skill_categories": ["General", "Strength"],
+            "secondary_skill_categories": ["Passing"]
+        },
+        {
+            "name": "Dwarf Runner",
+            "movement": 6,
+            "strength": 3,
+            "agility": 3,
+            "armor": 8,
+            "passing": 3,
+            "cost": 80000,
+            "starting_skills": ["Sure Hands"],
+            "traits": ["Thick Skull"],
+            "primary_skill_categories": ["General", "Agility"],
+            "secondary_skill_categories": ["Strength", "Passing"]
+        },
+        {
+            "name": "Dwarf Blitzer",
+            "movement": 5,
+            "strength": 3,
+            "agility": 3,
+            "armor": 9,
+            "passing": 4,
+            "cost": 80000,
+            "starting_skills": ["Block"],
+            "traits": ["Thick Skull"],
+            "primary_skill_categories": ["General", "Strength"],
+            "secondary_skill_categories": ["Agility", "Passing"]
+        },
+        {
+            "name": "Troll Slayer",
+            "movement": 5,
+            "strength": 3,
+            "agility": 2,
+            "armor": 8,
+            "passing": 4,
+            "cost": 90000,
+            "starting_skills": ["Block", "Dauntless", "Frenzy"],
+            "traits": ["Thick Skull"],
+            "primary_skill_categories": ["General", "Strength"],
+            "secondary_skill_categories": ["Agility", "Passing"]
+        },
+        {
+            "name": "Deathroller",
+            "movement": 4,
+            "strength": 7,
+            "agility": 5,
+            "armor": 10,
+            "passing": 6,
+            "cost": 160000,
+            "starting_skills": ["Break Tackle", "Dirty Player (+1)", "Stand Firm"],
+            "traits": ["Loner", "No Hands", "Secret Weapon"],
+            "primary_skill_categories": ["Strength"],
+            "secondary_skill_categories": ["General"]
+        }
+]

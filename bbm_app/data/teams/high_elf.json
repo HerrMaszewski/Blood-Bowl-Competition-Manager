@@ -1,0 +1,50 @@
+[
+    {
+        "name": "High Elf Lineman",
+        "movement": 6,
+        "strength": 3,
+        "agility": 2,
+        "armor": 9,
+        "passing": 4,
+        "cost": 70000,
+        "starting_skills": [],
+        "primary_skill_categories": ["Agility"],
+        "secondary_skill_categories": ["Passing", "Strength"]
+    },
+    {
+        "name": "High Elf Thrower",
+        "movement": 6,
+        "strength": 3,
+        "agility": 2,
+        "armor": 9,
+        "passing": 2,
+        "cost": 100000,
+        "starting_skills": ["Cloud Burster", "Pass", "Safe Pass"],
+        "primary_skill_categories": ["Agility", "Passing"],
+        "secondary_skill_categories": ["Strength"]
+    },
+    {
+        "name": "High Elf Catcher",
+        "movement": 8,
+        "strength": 3,
+        "agility": 2,
+        "armor": 8,
+        "passing": 5,
+        "cost": 90000,
+        "starting_skills": ["Catch"],
+        "primary_skill_categories": ["Agility"],
+        "secondary_skill_categories": ["Strength"]
+    },
+    {
+        "name": "High Elf Blitzer",
+        "movement": 7,
+        "strength": 3,
+        "agility": 2,
+        "armor": 9,
+        "passing": 4,
+        "cost": 100000,
+        "starting_skills": ["Block"],
+        "primary_skill_categories": ["Agility"],
+        "secondary_skill_categories": ["Passing", "Strength"]
+    }
+]

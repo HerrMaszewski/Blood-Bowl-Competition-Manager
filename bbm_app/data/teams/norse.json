@@ -1,0 +1,76 @@
+[
+        {
+            "name": "Norse Lineman",
+            "cost": 50000,
+            "movement": 6,
+            "strength": 3,
+            "agility": 3,
+            "passing": 4,
+            "armor": 8,
+            "starting_skills": ["Block"],
+            "traits": ["Drunkard", "Thick Skull"],
+            "primary_skill_categories": ["General"],
+            "secondary_skill_categories": ["Agility", "Passing", "Strength"]
+        },
+        {
+            "name": "Beer Boar",
+            "cost": 20000,
+            "movement": 5,
+            "strength": 1,
+            "agility": 3,
+            "passing": null,
+            "armor": 6,
+            "starting_skills": ["Dodge", "No Hands", "Pick-me-up", "Stunty", "Titchy"],
+            "primary_skill_categories": [],
+            "secondary_skill_categories": ["Agility"]
+        },
+        {
+            "name": "Norse Berserker",
+            "cost": 90000,
+            "movement": 6,
+            "strength": 3,
+            "agility": 3,
+            "passing": 5,
+            "armor": 8,
+            "starting_skills": ["Block", "Frenzy", "Jump Up"],
+            "primary_skill_categories": ["General", "Strength"],
+            "secondary_skill_categories": ["Agility", "Passing"]
+        },
+        {
+            "name": "Valkyrie",
+            "cost": 95000,
+            "movement": 7,
+            "strength": 3,
+            "agility": 3,
+            "passing": 3,
+            "armor": 8,
+            "starting_skills": ["Catch", "Dauntless", "Pass", "Strip Ball"],
+            "primary_skill_categories": ["Agility", "General", "Passing"],
+            "secondary_skill_categories": ["Strength"]
+        },
+        {
+            "name": "Ulfwerener",
+            "cost": 105000,
+            "movement": 6,
+            "strength": 4,
+            "agility": 4,
+            "passing": null,
+            "armor": 9,
+            "starting_skills": ["Frenzy"],
+            "primary_skill_categories": ["General", "Strength"],
+            "secondary_skill_categories": ["Agility"]
+        },
+        {
+            "name": "Yhetee",
+            "cost": 140000,
+            "movement": 5,
+            "strength": 5,
+            "agility": 4,
+            "passing": null,
+            "armor": 9,
+            "starting_skills": ["Disturbing Presence", "Frenzy"],
+            "traits": ["Loner (4+)", "Unchannelled Fury", "Claws"],
+            "primary_skill_categories": ["Strength"],
+            "secondary_skill_categories": ["Agility", "General"]
+        }
+    ]

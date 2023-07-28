@@ -1,0 +1,54 @@
+[
+    {
+        "name": "Halfling Hopeful",
+        "movement": 5,
+        "strength": 2,
+        "agility": 3,
+        "armor": 7,
+        "passing": 4,
+        "cost": 30000,
+        "starting_skills": ["Dodge"],
+        "traits": ["Right Stuff", "Stunty"],
+        "primary_skill_categories": ["Agility"],
+        "secondary_skill_categories": ["General", "Strength"]
+    },
+    {
+        "name": "Hefty",
+        "movement": 5,
+        "strength": 2,
+        "agility": 3,
+        "armor": 8,
+        "passing": 3,
+        "cost": 50000,
+        "starting_skills": ["Dodge", "Fend"],
+        "traits": ["Stunty"],
+        "primary_skill_categories": ["Agility", "Passing"],
+        "secondary_skill_categories": ["General", "Strength"]
+    },
+    {
+        "name": "Halfling Catcher",
+        "movement": 5,
+        "strength": 2,
+        "agility": 3,
+        "armor": 7,
+        "passing": 5,
+        "cost": 55000,
+        "starting_skills": ["Catch", "Dodge", "Sprint"],
+        "traits": ["Right Stuff", "Stunty"],
+        "primary_skill_categories": ["Agility"],
+        "secondary_skill_categories": ["General", "Strength"]
+    },
+    {
+        "name": "Altern Forest Treeman",
+        "movement": 2,
+        "strength": 6,
+        "agility": 5,
+        "armor": 11,
+        "passing": 5,
+        "cost": 120000,
+        "starting_skills": ["Mighty Blow (1+)", "Stand Firm", "Strong Arm"],
+        "traits": ["Take Root", "Thick Skull", "Throw Team Mate", "Timmm-ber!"],
+        "primary_skill_categories": ["Strength"],
+        "secondary_skill_categories": ["Agility", "General", "Passing"]
+    }
+]

@@ -1,0 +1,62 @@
+[
+        {
+            "name": "Skeleton Lineman",
+            "movement": 5,
+            "strength": 3,
+            "agility": 4,
+            "armor": 7,
+            "passing": 6,
+            "cost": 40000,
+            "starting_skills": ["Regeneration", "Thick Skull"],
+            "primary_skill_categories": ["General"],
+            "secondary_skill_categories": ["Agility", "Strength"]
+        },
+        {
+            "name": "Zombie Lineman",
+            "movement": 4,
+            "strength": 3,
+            "agility": 4,
+            "armor": 8,
+            "passing": null,
+            "cost": 40000,
+            "starting_skills": ["Regeneration"],
+            "primary_skill_categories": ["General"],
+            "secondary_skill_categories": ["Agility", "Strength"]
+        },
+        {
+            "name": "Ghoul Runner",
+            "movement": 7,
+            "strength": 3,
+            "agility": 3,
+            "armor": 7,
+            "passing": 4,
+            "cost": 75000,
+            "starting_skills": ["Dodge"],
+            "primary_skill_categories": ["General", "Agility"],
+            "secondary_skill_categories": ["Strength"]
+        },
+        {
+            "name": "Wight Blitzer",
+            "movement": 6,
+            "strength": 3,
+            "agility": 3,
+            "armor": 8,
+            "passing": 3,
+            "cost": 90000,
+            "starting_skills": ["Block", "Regeneration"],
+            "primary_skill_categories": ["General", "Strength"],
+            "secondary_skill_categories": ["Agility"]
+        },
+        {
+            "name": "Mummy",
+            "movement": 3,
+            "strength": 5,
+            "agility": 4,
+            "armor": 10,
+            "passing": null,
+            "cost": 120000,
+            "starting_skills": ["Mighty Blow", "Regeneration"],
+            "primary_skill_categories": ["Strength"],
+            "secondary_skill_categories": ["General"]
+        }
+]

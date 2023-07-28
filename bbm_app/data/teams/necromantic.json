@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Necromantic Zombie",
+        "movement": 4,
+        "strength": 3,
+        "agility": 4,
+        "armor": 8,
+        "passing": null,
+        "starting_skills": [],
+        "traits": ["Regeneration"],
+        "cost": 40000,
+        "primary_skill_categories": ["General"],
+        "secondary_skill_categories": []
+    },
+    {
+        "name": "Necromantic Ghoul Runner",
+        "movement": 7,
+        "strength": 3,
+        "agility": 3,
+        "armor": 7,
+        "passing": 4,
+        "starting_skills": ["Dodge"],
+        "cost": 75000,
+        "primary_skill_categories": ["General", "Agility"],
+        "secondary_skill_categories": ["Passing"]
+    },
+    {
+        "name": "Flesh Golem",
+        "movement": 4,
+        "strength": 4,
+        "agility": 4,
+        "armor": 9,
+        "passing": null,
+        "starting_skills": ["Regeneration", "Stand Firm", "Thick Skull"],
+        "traits": ["Regeneration"],
+        "cost": 110000,
+        "primary_skill_categories": ["General", "Strength"],
+        "secondary_skill_categories": []
+    },
+    {
+        "name": "Werewolf",
+        "movement": 8,
+        "strength": 3,
+        "agility": 3,
+        "armor": 8,
+        "passing": 4,
+        "starting_skills": ["Frenzy"],
+        "traits": ["Regeneration", "Claws"],
+        "cost": 120000,
+        "primary_skill_categories": ["General", "Agility"],
+        "secondary_skill_categories": ["Strength"]
+    },
+    {
+        "name": "Wraith",
+        "movement": 7,
+        "strength": 3,
+        "agility": 3,
+        "armor": 8,
+        "passing": null,
+        "starting_skills": [],
+        "traits": ["Foul Appearance", "Regeneration", "No Hands"],
+        "cost": 70000,
+        "primary_skill_categories": ["General"],
+        "secondary_skill_categories": ["Agility"]
+    }
+]

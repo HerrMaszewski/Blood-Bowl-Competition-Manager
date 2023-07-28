@@ -1,0 +1,40 @@
+[
+    {
+        "name": "Black Orc",
+        "movement": 4,
+        "strength": 4,
+        "agility": 4,
+        "armor": 10,
+        "passing": 5,
+        "cost": 90000,
+        "starting_skills": ["Brawler", "Grab"],
+        "primary_skill_categories": ["General", "Strength"],
+        "secondary_skill_categories": []
+    },
+    {
+        "name": "Goblin Bruiser",
+        "movement": 6,
+        "strength": 2,
+        "agility": 3,
+        "armor": 8,
+        "passing": 4,
+        "cost": 45000,
+        "starting_skills": ["Dodge"],
+        "traits": ["Right Stuff", "Stunty"],
+        "primary_skill_categories": ["Agility"],
+        "secondary_skill_categories": ["Passing", "Strength"]
+    },
+    {
+        "name": "Black Orc Troll",
+        "movement": 4,
+        "strength": 5,
+        "agility": 5,
+        "armor": 10,
+        "passing": 5,
+        "cost": 115000,
+        "starting_skills": [ "Mighty Blow (+1)"],
+        "traits": ["Always Hungry", "Loner (4+)", "Really Stupid", "Regeneration", "Throw Team-Mate"],
+        "primary_skill_categories": ["Strength"],
+        "secondary_skill_categories": ["Agility", "Passing"]
+    }
+]

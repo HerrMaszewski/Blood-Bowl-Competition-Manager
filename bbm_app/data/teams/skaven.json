@@ -1,0 +1,63 @@
+[
+    {
+        "name": "Skaven Lineman",
+        "movement": 7,
+        "strength": 3,
+        "agility": 3,
+        "armor": 7,
+        "passing": 4,
+        "cost": 50000,
+        "starting_skills": [],
+        "primary_skill_categories": ["General"],
+        "secondary_skill_categories": ["Agility"]
+    },
+    {
+        "name": "Skaven Thrower",
+        "movement": 7,
+        "strength": 3,
+        "agility": 3,
+        "armor": 7,
+        "passing": 2,
+        "cost": 70000,
+        "starting_skills": ["Pass", "Sure Hands"],
+        "primary_skill_categories": ["General", "Passing"],
+        "secondary_skill_categories": ["Agility"]
+    },
+    {
+        "name": "Gutter Runner",
+        "movement": 9,
+        "strength": 2,
+        "agility": 2,
+        "armor": 7,
+        "passing": 4,
+        "cost": 80000,
+        "starting_skills": ["Dodge"],
+        "primary_skill_categories": ["General", "Agility"],
+        "secondary_skill_categories": []
+    },
+    {
+        "name": "Skaven Blitzer",
+        "movement": 7,
+        "strength": 3,
+        "agility": 3,
+        "armor": 8,
+        "passing": 4,
+        "cost": 90000,
+        "starting_skills": ["Block"],
+        "primary_skill_categories": ["General", "Strength"],
+        "secondary_skill_categories": ["Agility"]
+    },
+    {
+        "name": "Rat Ogre",
+        "movement": 6,
+        "strength": 5,
+        "agility": 3,
+        "armor": 8,
+        "passing": 5,
+        "cost": 150000,
+        "starting_skills": ["Frenzy", "Mighty Blow (1+)", "Prehensile Tail"],
+        "traits": ["Wild Animal"],
+        "primary_skill_categories": ["Strength"],
+        "secondary_skill_categories": ["General", "Agility"]
+    }
+]

@@ -1,0 +1,87 @@
+[
+    {
+        "category": "General",
+        "skills": [
+            "Block",
+            "Dauntless",
+            "Dirty Player (1+)",
+            "Fend",
+            "Frenzy",
+            "Kick",
+            "Pro",
+            "Shadowing",
+            "Strip Ball",
+            "Sure Hands",
+            "Tackle",
+            "Wrestle"
+        ]
+    },
+    {
+        "category": "Agility",
+        "skills": [
+            "Catch",
+            "Diving Catch",
+            "Diving Tackle",
+            "Dodge",
+            "Jump Up",
+            "Leap",
+            "Side Step",
+            "Sneaky Git",
+            "Sprint",
+            "Sure Feet",
+            "Two Heads",
+            "Very Long Legs"
+        ]
+    },
+    {
+        "category": "Strength",
+        "skills": [
+            "Break Tackle",
+            "Grab",
+            "Guard",
+            "Juggernaut",
+            "Mighty Blow (1+)",
+            "Multiple Block",
+            "Piling On",
+            "Stand Firm",
+            "Strong Arm",
+            "Thick Skull",
+            "Throw Team-Mate",
+            "Timmm-ber"
+        ]
+    },
+    {
+        "category": "Passing",
+        "skills": [
+            "Accurate",
+            "Cannoneer",
+            "Cloudburster",
+            "Dump-Off",
+            "Hail Mary Pass",
+            "Leader",
+            "Nerves of Steel",
+            "On the Ball",
+            "Pass",
+            "Running Pass",
+            "Safe Throw",
+            "Strong Arm"
+        ]
+    },
+    {
+        "category": "Mutation",
+        "skills": [
+            "Big Hand",
+            "Claws",
+            "Disturbing Presence",
+            "Extra Arms",
+            "Foul Appearance",
+            "Horns",
+            "Prehensile Tail",
+            "Tentacles",
+            "Two Heads",
+            "Very Long Legs",
+            "Monstrous Mouth",
+            "Bizarre Appearance"
+        ]
+    }
+]

@@ -1,0 +1,28 @@
+[
+        {
+            "name": "Ogre Snotling",
+            "movement": 5,
+            "strength": 1,
+            "agility": 3,
+            "armor": 6,
+            "passing": 4,
+            "cost": 20000,
+            "starting_skills": ["Dodge", "Side Step"],
+            "traits": ["Stunty", "Right Stuff", "Titchy"],
+            "primary_skill_categories": ["Agility"],
+            "secondary_skill_categories": ["Passing", "General"]
+        },
+        {
+            "name": "Ogre",
+            "movement": 5,
+            "strength": 5,
+            "agility": 4,
+            "armor": 10,
+            "passing": 5,
+            "cost": 140000,
+            "starting_skills": ["Mighty Blow (+1)"],
+            "traits": ["Bone-Head", "Thick Skull", "Throw Team-Mate"],
+            "primary_skill_categories": ["Strength"],
+            "secondary_skill_categories": ["Agility", "Passing", "General"]
+        }
+    ]

@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Bloodborn Marauder",
+        "movement": 6,
+        "strength": 3,
+        "agility": 3,
+        "armor": 8,
+        "passing": 4,
+        "cost": 50000,
+        "starting_skills": ["Frenzy"],
+        "primary_skill_categories": ["General", "Mutation"],
+        "secondary_skill_categories": ["Agility", "Strength"]
+    },
+    {
+        "name": "Khorngors",
+        "movement": 6,
+        "strength": 3,
+        "agility": 3,
+        "armor": 9,
+        "passing": 4,
+        "cost": 70000,
+        "starting_skills": ["Horns", "Juggernaut"],
+        "primary_skill_categories": ["General", "Mutation", "Strength"],
+        "secondary_skill_categories": ["Agility", "Passing"]
+    },
+    {
+        "name": "Bloodseeker",
+        "movement": 5,
+        "strength": 4,
+        "agility": 4,
+        "armor": 10,
+        "passing": 6,
+        "cost": 110000,
+        "starting_skills": ["Frenzy"],
+        "primary_skill_categories": ["General", "Mutation", "Strength"],
+        "secondary_skill_categories": ["Agility"]
+    },
+    {
+        "name": "Bloodspawn",
+        "movement": 5,
+        "strength": 5,
+        "agility": 4,
+        "armor": 9,
+        "passing": null,
+        "cost": 160000,
+        "starting_skills": ["Frenzy", "Mighty Blow (+1)"],
+        "traits": ["Unchannelled Fury",  "Loner (4+)", "Claws"],
+        "primary_skill_categories": ["Mutation", "Strength"],
+        "secondary_skill_categories": ["Agility", "General"]
+    }
+]
