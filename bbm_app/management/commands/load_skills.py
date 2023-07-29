@@ -13,8 +13,10 @@ class Command(BaseCommand):
             data = json.load(json_file)
             for category_skills in data:
                 category_name = category_skills['category']
+                print(f'Processing category: {category_name}')
                 category, created = SkillCategory.objects.get_or_create(name=category_name)
                 for skill_name in category_skills['skills']:
+                    print(f'Processing skill: {skill_name}')
                     skill, created = Skill.objects.get_or_create(name=skill_name)
                     category.skills.add(skill)
         self.stdout.write(self.style.SUCCESS('Umiejętności dodane'))

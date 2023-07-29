@@ -1,80 +1,166 @@
-[
+{
+  "race_type": "SNO",
+  "positions": [
     {
-        "name": "Snotling",
-        "movement": 5,
-        "strength": 1,
-        "agility": 3,
-        "armor": 6,
-        "passing": 5,
-        "cost": 15000,
-        "starting_skills": ["Dodge", "Side Step"],
-        "traits": ["Stunty", "Right Stuff", "Swarming", "Titchy"],
-        "primary_skill_categories": ["Agility"],
-        "secondary_skill_categories": ["General"]
+      "name": "Snotling",
+      "movement": 5,
+      "strength": 1,
+      "agility": 3,
+      "armor": 6,
+      "passing": 5,
+      "cost": 15000,
+      "starting_skills": [
+        "Dodge",
+        "Side Step"
+      ],
+      "traits": [
+        "Stunty",
+        "Right Stuff",
+        "Swarming",
+        "Titchy"
+      ],
+      "primary_skill_categories": [
+        "Agility"
+      ],
+      "secondary_skill_categories": [
+        "General"
+      ],
+      "max_count": 16
     },
     {
-        "name": "Fungus Flinga",
-        "movement": 5,
-        "strength": 1,
-        "agility": 3,
-        "armor": 6,
-        "passing": 4,
-        "cost": 30000,
-        "starting_skills": ["Dodge", "Side Step"],
-        "traits": ["Bombardier","Right Stuff", "Secret Weapon", "Stunty"],
-        "primary_skill_categories": ["Agility", "Passing"],
-        "secondary_skill_categories": ["General"]
+      "name": "Fungus Flinga",
+      "movement": 5,
+      "strength": 1,
+      "agility": 3,
+      "armor": 6,
+      "passing": 4,
+      "cost": 30000,
+      "starting_skills": [
+        "Dodge",
+        "Side Step"
+      ],
+      "traits": [
+        "Bombardier",
+        "Right Stuff",
+        "Secret Weapon",
+        "Stunty"
+      ],
+      "primary_skill_categories": [
+        "Agility",
+        "Passing"
+      ],
+      "secondary_skill_categories": [
+        "General"
+      ],
+      "max_count": 2
     },
     {
-        "name": "Fun-hoppa",
-        "movement": 6,
-        "strength": 1,
-        "agility": 3,
-        "armor": 6,
-        "passing": 5,
-        "cost": 20000,
-        "starting_skills": ["Dodge", "Side Step"],
-        "traits": ["Stunty", "Pogo Stick", "Right Stuff"],
-        "primary_skill_categories": ["Agility"],
-        "secondary_skill_categories": ["General"]
+      "name": "Fun-hoppa",
+      "movement": 6,
+      "strength": 1,
+      "agility": 3,
+      "armor": 6,
+      "passing": 5,
+      "cost": 20000,
+      "starting_skills": [
+        "Dodge",
+        "Side Step"
+      ],
+      "traits": [
+        "Stunty",
+        "Pogo Stick",
+        "Right Stuff"
+      ],
+      "primary_skill_categories": [
+        "Agility"
+      ],
+      "secondary_skill_categories": [
+        "General"
+      ],
+      "max_count": 2
     },
     {
-        "name": "Stilty Runna",
-        "movement": 6,
-        "strength": 1,
-        "agility": 3,
-        "armor": 6,
-        "passing": 5,
-        "cost": 20000,
-        "starting_skills": ["Dodge", "Side Step", "Sprint"],
-        "traits": ["Stunty", "Right Stuff"],,
-        "primary_skill_categories": ["Agility"],
-        "secondary_skill_categories": ["General"]
+      "name": "Stilty Runna",
+      "movement": 6,
+      "strength": 1,
+      "agility": 3,
+      "armor": 6,
+      "passing": 5,
+      "cost": 20000,
+      "starting_skills": [
+        "Dodge",
+        "Side Step",
+        "Sprint"
+      ],
+      "traits": [
+        "Stunty",
+        "Right Stuff"
+      ],
+      "primary_skill_categories": [
+        "Agility"
+      ],
+      "secondary_skill_categories": [
+        "General"
+      ],
+      "max_count": 2
     },
     {
-        "name": "Pump Wagon",
-        "movement": 4,
-        "strength": 5,
-        "agility": 5,
-        "armor": 9,
-        "passing": null,
-        "cost": 105000,
-        "starting_skills": ["Dirty Player (+1)", "Juggernaut", "Mighty Blow (+1)", "Stand Firm"],
-        "traits": ["Stunty","Really Stupid", "Secret Weapon"],
-        "primary_skill_categories": ["Strength"],
-        "secondary_skill_categories": ["Agility", "General"]
+      "name": "Pump Wagon",
+      "movement": 4,
+      "strength": 5,
+      "agility": 5,
+      "armor": 9,
+      "passing": null,
+      "cost": 105000,
+      "starting_skills": [
+        "Dirty Player (+1)",
+        "Juggernaut",
+        "Mighty Blow (+1)",
+        "Stand Firm"
+      ],
+      "traits": [
+        "Stunty",
+        "Really Stupid",
+        "Secret Weapon"
+      ],
+      "primary_skill_categories": [
+        "Strength"
+      ],
+      "secondary_skill_categories": [
+        "Agility",
+        "General"
+      ],
+      "max_count": 2
     },
     {
-        "name": "Trained Troll",
-        "movement": 4,
-        "strength": 5,
-        "agility": 5,
-        "armor": 10,
-        "passing": 5,
-        "cost": 115000,
-        "starting_skills": ["Mighty Blow (+1)"],
-        "traits": ["Stunty", "Always Hungry", "Loner (3+)", "Projectile Vomit", "Really Stupid", "Regeneration", "Throw Team Mate"],
-        "primary_skill_categories": ["Strength"],
-        "secondary_skill_categories": ["Agility", "General", "Passing"]
+      "name": "Trained Troll",
+      "movement": 4,
+      "strength": 5,
+      "agility": 5,
+      "armor": 10,
+      "passing": 5,
+      "cost": 115000,
+      "starting_skills": [
+        "Mighty Blow (+1)"
+      ],
+      "traits": [
+        "Stunty",
+        "Always Hungry",
+        "Loner (3+)",
+        "Projectile Vomit",
+        "Really Stupid",
+        "Regeneration",
+        "Throw Team Mate"
+      ],
+      "primary_skill_categories": [
+        "Strength"
+      ],
+      "secondary_skill_categories": [
+        "Agility",
+        "General",
+        "Passing"
+      ],
+      "max_count": 2
     }
-]
+  ]
+}

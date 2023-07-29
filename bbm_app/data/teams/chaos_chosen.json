@@ -1,4 +1,6 @@
-[
+{
+    "race_type": "CHA",
+    "positions": [
         {
             "name": "Beastman",
             "movement": 6,
@@ -7,9 +9,19 @@
             "armor": 8,
             "passing": 4,
             "cost": 60000,
-            "starting_skills": ["Horns"],
-            "primary_skill_categories": ["General", "Mutation"],
-            "secondary_skill_categories": ["Agility", "Strength", "Passing"]
+            "starting_skills": [
+                "Horns"
+            ],
+            "primary_skill_categories": [
+                "General",
+                "Mutation"
+            ],
+            "secondary_skill_categories": [
+                "Agility",
+                "Strength",
+                "Passing"
+            ],
+            "max_count": 16
         },
         {
             "name": "Chaos Chosen",
@@ -20,8 +32,16 @@
             "passing": 5,
             "cost": 100000,
             "starting_skills": [],
-            "primary_skill_categories": ["General", "Mutation", "Strength"],
-            "secondary_skill_categories": ["Agility", "Passing"]
+            "primary_skill_categories": [
+                "General",
+                "Mutation",
+                "Strength"
+            ],
+            "secondary_skill_categories": [
+                "Agility",
+                "Passing"
+            ],
+            "max_count": 4
         },
         {
             "name": "Chaos Minotaur",
@@ -31,10 +51,24 @@
             "armor": 9,
             "passing": null,
             "cost": 150000,
-            "starting_skills": ["Frenzy", "Horns", "Mighty Blow (1+)"],
-            "traits": ["Loner", "Thick Skull", "Wild Animal"],
-            "primary_skill_categories": ["Mutation", "Strength"],
-            "secondary_skill_categories": ["General"]
+            "starting_skills": [
+                "Frenzy",
+                "Horns",
+                "Mighty Blow (1+)",
+                "Thick Skull"
+            ],
+            "traits": [
+                "Loner",
+                "Wild Animal"
+            ],
+            "primary_skill_categories": [
+                "Mutation",
+                "Strength"
+            ],
+            "secondary_skill_categories": [
+                "General"
+            ],
+            "max_count": 1
         },
         {
             "name": "Chaos Troll",
@@ -44,10 +78,25 @@
             "agility": 5,
             "armor": 10,
             "passing": 5,
-            "skills": ["Mighty Blow (+1)"],
-            "traits": ["Always Hungry", "Loner (4+)","Projectile Vomit", "Really Stupid", "Regeneration", "Throw Team Mate"],
-            "primary_skill_categories": ["Mutation", "Strength"],
-            "secondary_skill_categories": ["Agility"]
+            "skills": [
+                "Mighty Blow (+1)"
+            ],
+            "traits": [
+                "Always Hungry",
+                "Loner (4+)",
+                "Projectile Vomit",
+                "Really Stupid",
+                "Regeneration",
+                "Throw Team Mate"
+            ],
+            "primary_skill_categories": [
+                "Mutation",
+                "Strength"
+            ],
+            "secondary_skill_categories": [
+                "Agility"
+            ],
+            "max_count": 1
         },
         {
             "name": "Chaos Ogre",
@@ -57,9 +106,23 @@
             "agility": 4,
             "armor": 10,
             "passing": 5,
-            "skills": ["Mighty Blow (+1)"],
-            "traits": ["Bone Head", "Loner (4+)", "Thick Skull", "Throw Team Mate"],
-            "primary_skill_categories": ["Mutation", "Strength"],
-            "secondary_skill_categories": ["Agility"]
+            "skills": [
+                "Mighty Blow (+1)"
+            ],
+            "traits": [
+                "Bone Head",
+                "Loner (4+)",
+                "Thick Skull",
+                "Throw Team Mate"
+            ],
+            "primary_skill_categories": [
+                "Mutation",
+                "Strength"
+            ],
+            "secondary_skill_categories": [
+                "Agility"
+            ],
+            "max_count": 1
         }
-]
+    ]
+}

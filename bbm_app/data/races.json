@@ -21,5 +21,6 @@
     {"race": "OWA", "reroll_cost": 70000, "has_apothecary": true},
     {"race": "HIG", "reroll_cost": 50000, "has_apothecary": true},
     {"race": "NUR", "reroll_cost": 70000, "has_apothecary": false},
-    {"race": "KHO", "reroll_cost": 60000, "has_apothecary": true}
+    {"race": "KHO", "reroll_cost": 60000, "has_apothecary": true},
+    {"race": "DAR", "reroll_cost": 50000, "has_apothecary": true}
 ]

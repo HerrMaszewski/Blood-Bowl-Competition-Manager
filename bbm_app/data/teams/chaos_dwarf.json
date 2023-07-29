@@ -1,53 +1,98 @@
-[
-    {
-        "name": "Hobgoblin Runner",
-        "movement": 6,
-        "strength": 3,
-        "agility": 3,
-        "armor": 9,
-        "passing": 4,
-        "cost": 40000,
-        "starting_skills": [],
-        "primary_skill_categories": ["General"],
-        "secondary_skill_categories": ["Agility", "Strength"]
-    },
-    {
-        "name": "Chaos Dwarf",
-        "movement": 4,
-        "strength": 3,
-        "agility": 3,
-        "armor": 9,
-        "passing": 5,
-        "cost": 70000,
-        "starting_skills": ["Block", "Tackle"],
-        "traits": ["Thick Skull"],
-        "primary_skill_categories": ["General", "Strength"],
-        "secondary_skill_categories": ["Agility"]
-    },
-    {
-        "name": "Bull Centaur",
-        "movement": 6,
-        "strength": 4,
-        "agility": 3,
-        "armor": 9,
-        "passing": 5,
-        "cost": 130000,
-        "starting_skills": ["Sure Feet", "Sprint"],
-        "traits": ["Thick Skull"],
-        "primary_skill_categories": ["General", "Strength"],
-        "secondary_skill_categories": ["Agility"]
-    },
-    {
-        "name": "Chaos Dwarf Minotaur",
-        "movement": 5,
-        "strength": 5,
-        "agility": 4,
-        "armor": 9,
-        "passing": 5,
-        "cost": 150000,
-        "starting_skills": ["Frenzy", "Horns", "Mighty Blow (+1)"],
-        "traits": ["Loner (4+)", "Thick Skull", "Wild Animal" ],
-        "primary_skill_categories": ["Strength"],
-        "secondary_skill_categories": ["General", "Agility"]
-    }
-]
+{
+    "race_type": "CDW",
+    "positions": [
+        {
+            "name": "Hobgoblin",
+            "movement": 6,
+            "strength": 3,
+            "agility": 3,
+            "armor": 9,
+            "passing": 4,
+            "cost": 40000,
+            "starting_skills": [],
+            "primary_skill_categories": [
+                "General"
+            ],
+            "secondary_skill_categories": [
+                "Agility",
+                "Strength"
+            ],
+            "max_count": 16
+        },
+        {
+            "name": "Chaos Dwarf",
+            "movement": 4,
+            "strength": 3,
+            "agility": 3,
+            "armor": 9,
+            "passing": 5,
+            "cost": 70000,
+            "starting_skills": [
+                "Block",
+                "Tackle",
+                "Thick Skull"
+            ],
+            "traits": [
+            ],
+            "primary_skill_categories": [
+                "General",
+                "Strength"
+            ],
+            "secondary_skill_categories": [
+                "Agility"
+            ],
+            "max_count": 6
+        },
+        {
+            "name": "Bull Centaur",
+            "movement": 6,
+            "strength": 4,
+            "agility": 3,
+            "armor": 9,
+            "passing": 5,
+            "cost": 130000,
+            "starting_skills": [
+                "Sure Feet",
+                "Sprint",
+                "Thick Skull"
+            ],
+            "traits": [
+            ],
+            "primary_skill_categories": [
+                "General",
+                "Strength"
+            ],
+            "secondary_skill_categories": [
+                "Agility"
+            ],
+            "max_count": 2
+        },
+        {
+            "name": "Enslaved Minotaur",
+            "movement": 5,
+            "strength": 5,
+            "agility": 4,
+            "armor": 9,
+            "passing": 5,
+            "cost": 150000,
+            "starting_skills": [
+                "Frenzy",
+                "Horns",
+                "Mighty Blow (+1)",
+                "Thick Skull"
+            ],
+            "traits": [
+                "Loner (4+)",
+                "Wild Animal"
+            ],
+            "primary_skill_categories": [
+                "Strength"
+            ],
+            "secondary_skill_categories": [
+                "General",
+                "Agility"
+            ],
+            "max_count": 1
+        }
+    ]
+}

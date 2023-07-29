@@ -1,63 +1,120 @@
-[
+{
+  "race_type": "IMP",
+  "positions": [
     {
-        "name": "Nobility Lineman",
-        "movement": 6,
-        "strength": 3,
-        "agility": 3,
-        "armor": 8,
-        "passing": 4,
-        "starting_skills": ["Fend"],
-        "cost": 45000,
-        "primary_skill_categories": ["General"],
-        "secondary_skill_categories": ["Agility", "Passing", "Strength"]
+      "name": "Nobility Lineman",
+      "movement": 6,
+      "strength": 3,
+      "agility": 3,
+      "armor": 8,
+      "passing": 4,
+      "starting_skills": [
+        "Fend"
+      ],
+      "cost": 45000,
+      "primary_skill_categories": [
+        "General"
+      ],
+      "secondary_skill_categories": [
+        "Agility",
+        "Passing",
+        "Strength"
+      ],
+      "max_count": 12
     },
     {
-        "name": "Nobility Thrower",
-        "movement": 6,
-        "strength": 3,
-        "agility": 3,
-        "armor": 8,
-        "passing": 2,
-        "starting_skills": ["Pass", "Running Pass", "Sure Hands"],
-        "cost": 75000,
-        "primary_skill_categories": ["General", "Passing"],
-        "secondary_skill_categories": ["Agility", "Strength"]
+      "name": "Nobility Thrower",
+      "movement": 6,
+      "strength": 3,
+      "agility": 3,
+      "armor": 8,
+      "passing": 2,
+      "starting_skills": [
+        "Pass",
+        "Running Pass",
+        "Sure Hands"
+      ],
+      "cost": 75000,
+      "primary_skill_categories": [
+        "General",
+        "Passing"
+      ],
+      "secondary_skill_categories": [
+        "Agility",
+        "Strength"
+      ],
+      "max_count": 2
     },
     {
-        "name": "Bodyguard",
-        "movement": 6,
-        "strength": 3,
-        "agility": 3,
-        "armor": 9,
-        "passing": 5,
-        "starting_skills": ["Stand Firm", "Wrestle"],
-        "cost": 90000,
-        "primary_skill_categories": ["General"],
-        "secondary_skill_categories": ["Agility", "Passing", "Strength"]
+      "name": "Bodyguard",
+      "movement": 6,
+      "strength": 3,
+      "agility": 3,
+      "armor": 9,
+      "passing": 5,
+      "starting_skills": [
+        "Stand Firm",
+        "Wrestle"
+      ],
+      "cost": 90000,
+      "primary_skill_categories": [
+        "General"
+      ],
+      "secondary_skill_categories": [
+        "Agility",
+        "Passing",
+        "Strength"
+      ],
+      "max_count": 4
     },
     {
-        "name": "Nobility Blitzer",
-        "movement": 7,
-        "strength": 3,
-        "agility": 3,
-        "armor": 8,
-        "passing": 4,
-        "starting_skills": ["Block", "Catch"],
-        "cost": 100000,
-        "primary_skill_categories": ["General", "Agility"],
-        "secondary_skill_categories": ["Passing", "Strength"]
+      "name": "Nobility Blitzer",
+      "movement": 7,
+      "strength": 3,
+      "agility": 3,
+      "armor": 8,
+      "passing": 4,
+      "starting_skills": [
+        "Block",
+        "Catch"
+      ],
+      "cost": 100000,
+      "primary_skill_categories": [
+        "General",
+        "Agility"
+      ],
+      "secondary_skill_categories": [
+        "Passing",
+        "Strength"
+      ],
+      "max_count": 2
     },
     {
-        "name": "Nobility Ogre",
-        "movement": 5,
-        "strength": 5,
-        "agility": 5,
-        "armor": 9,
-        "passing": 5,
-        "starting_skills": [ "Mighty Blow (1+)" ],
-        "traits": ["Bone-head", "Loner (4+)", "Thick Skull", "Throw Team-Mate"],
-        "cost": 140000,
-        "primary_skill_categories": ["Strength"],
-        "secondary_skill_categories": ["Agility", "General", "Passing"]
+      "name": "Nobility Ogre",
+      "movement": 5,
+      "strength": 5,
+      "agility": 5,
+      "armor": 9,
+      "passing": 5,
+      "starting_skills": [
+        "Mighty Blow (1+)",
+        "Thick Skull"
+      ],
+      "traits": [
+        "Bone-head",
+        "Loner (4+)",
+        "Throw Team-Mate"
+      ],
+      "cost": 140000,
+      "primary_skill_categories": [
+        "Strength"
+      ],
+      "secondary_skill_categories": [
+        "Agility",
+        "General",
+        "Passing"
+      ],
+      "max_count": 1
     }
-]
+  ]
+}

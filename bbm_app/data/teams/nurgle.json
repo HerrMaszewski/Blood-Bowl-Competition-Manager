@@ -1,54 +1,110 @@
-[
-        {
-            "name": "Rotter Lineman",
-            "movement": 5,
-            "strength": 3,
-            "agility": 4,
-            "armor": 8,
-            "passing": 4,
-            "cost": 40000,
-            "starting_skills": [],
-            "traits": ["Decay", "Nurgle’s Rot"],
-            "primary_skill_categories": ["General"],
-            "secondary_skill_categories": ["Mutation", "Agility", "Passing"]
-        },
-        {
-            "name": "Pestigor",
-            "movement": 6,
-            "strength": 3,
-            "agility": 3,
-            "armor": 8,
-            "passing": 4,
-            "cost": 80000,
-            "starting_skills": ["Horns"],
-            "traits": ["Nurgle’s Rot", "Regeneration"],
-            "primary_skill_categories": ["General", "Mutation"],
-            "secondary_skill_categories": ["Strength", "Agility", "Passing"]
-        },
-        {
-            "name": "Nurgle Warrior Blocker",
-            "movement": 4,
-            "strength": 4,
-            "agility": 4,
-            "armor": 9,
-            "passing": 5,
-            "cost": 110000,
-            "starting_skills": ["Disturbing Presence"],
-            "traits": ["Nurgle’s Rot", "Regeneration", "Foul Appearance"],
-            "primary_skill_categories": ["General", "Mutation", "Strength"],
-            "secondary_skill_categories": ["Agility", "Passing"]
-        },
-        {
-            "name": "Beast of Nurgle",
-            "movement": 4,
-            "strength": 5,
-            "agility": 5,
-            "armor": 9,
-            "passing": 6,
-            "cost": 140000,
-            "starting_skills": ["Disturbing Presence", "Mighty Blow (1+)", "Tentacles"],
-            "traits": ["Nurgle’s Rot", "Regeneration", "Foul Appearance", "Loner (4+)", "Really Stupid"],
-            "primary_skill_categories": ["Strength", "Mutation"],
-            "secondary_skill_categories": ["General"]
-        }
-    ]
+{
+  "race_type": "NUR",
+  "positions": [
+    {
+      "name": "Rotter Lineman",
+      "movement": 5,
+      "strength": 3,
+      "agility": 4,
+      "armor": 8,
+      "passing": 4,
+      "cost": 40000,
+      "starting_skills": [],
+      "traits": [
+        "Decay",
+        "Nurgle’s Rot"
+      ],
+      "primary_skill_categories": [
+        "General"
+      ],
+      "secondary_skill_categories": [
+        "Mutation",
+        "Agility",
+        "Passing"
+      ],
+      "max_count": 12
+    },
+    {
+      "name": "Pestigor",
+      "movement": 6,
+      "strength": 3,
+      "agility": 3,
+      "armor": 8,
+      "passing": 4,
+      "cost": 80000,
+      "starting_skills": [
+        "Horns"
+      ],
+      "traits": [
+        "Nurgle’s Rot",
+        "Regeneration"
+      ],
+      "primary_skill_categories": [
+        "General",
+        "Mutation"
+      ],
+      "secondary_skill_categories": [
+        "Strength",
+        "Agility",
+        "Passing"
+      ],
+      "max_count": 4
+    },
+    {
+      "name": "Nurgle Warrior Blocker",
+      "movement": 4,
+      "strength": 4,
+      "agility": 4,
+      "armor": 9,
+      "passing": 5,
+      "cost": 110000,
+      "starting_skills": [
+        "Disturbing Presence"
+      ],
+      "traits": [
+        "Nurgle’s Rot",
+        "Regeneration",
+        "Foul Appearance"
+      ],
+      "primary_skill_categories": [
+        "General",
+        "Mutation",
+        "Strength"
+      ],
+      "secondary_skill_categories": [
+        "Agility",
+        "Passing"
+      ],
+      "max_count": 4
+    },
+    {
+      "name": "Beast of Nurgle",
+      "movement": 4,
+      "strength": 5,
+      "agility": 5,
+      "armor": 9,
+      "passing": 6,
+      "cost": 140000,
+      "starting_skills": [
+        "Disturbing Presence",
+        "Mighty Blow (1+)",
+        "Tentacles"
+      ],
+      "traits": [
+        "Nurgle’s Rot",
+        "Regeneration",
+        "Foul Appearance",
+        "Loner (4+)",
+        "Really Stupid"
+      ],
+      "primary_skill_categories": [
+        "Strength",
+        "Mutation"
+      ],
+      "secondary_skill_categories": [
+        "General"
+      ],
+      "max_count": 1
+    }
+  ]
+}

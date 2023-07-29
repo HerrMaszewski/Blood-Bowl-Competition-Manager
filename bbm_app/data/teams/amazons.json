@@ -1,51 +1,94 @@
-[
-    {
-        "name": "Eagle Warrior Linewomen",
-        "movement": 6,
-        "strength": 3,
-        "agility": 3,
-        "armor": 8,
-        "passing": 4,
-        "starting_skills": ["Dodge"],
-        "cost": 50000,
-        "primary_skill_categories": ["General"],
-        "secondary_skill_categories": ["Agility", "Strength"]
-    },
-    {
-        "name": "Python Warrior Thrower",
-        "movement": 6,
-        "strength": 3,
-        "agility": 3,
-        "armor": 8,
-        "passing": 3,
-        "starting_skills": ["Dodge", "On The Ball", "Pass", "Safe Pass"],
-        "cost": 80000,
-        "primary_skill_categories": ["General", "Passing"],
-        "secondary_skill_categories": ["Agility", "Strength"]
-    },
-    {
-        "name": "Piranha Warrior Blitzer",
-        "movement": 7,
-        "strength": 3,
-        "agility": 3,
-        "armor": 8,
-        "passing": 5,
-        "starting_skills": ["Dodge", "Jump Up"],
-        "traits": ["Hit and Run"],
-        "cost": 90000,
-        "primary_skill_categories": ["Agility", "General"],
-        "secondary_skill_categories": ["Strength"]
-    },
-    {
-        "name": "Jaguar Warrior Blocker",
-        "movement": 6,
-        "strength": 4,
-        "agility": 3,
-        "armor": 9,
-        "passing": 5,
-        "starting_skills": ["Defensive", "Dodge"],
-        "cost": 110000,
-        "primary_skill_categories": ["General", "Strength"],
-        "secondary_skill_categories": ["Agility"]
-    }
-]
+{
+    "race_type": "AMA",
+    "positions": [
+        {
+            "name": "Eagle Warrior Linewoman",
+            "movement": 6,
+            "strength": 3,
+            "agility": 3,
+            "armor": 8,
+            "passing": 4,
+            "starting_skills": [
+                "Dodge"
+            ],
+            "cost": 50000,
+            "primary_skill_categories": [
+                "General"
+            ],
+            "secondary_skill_categories": [
+                "Agility",
+                "Strength"
+            ],
+            "max_count": 16
+        },
+        {
+            "name": "Python Warrior Thrower",
+            "movement": 6,
+            "strength": 3,
+            "agility": 3,
+            "armor": 8,
+            "passing": 3,
+            "starting_skills": [
+                "Dodge",
+                "On The Ball",
+                "Pass",
+                "Safe Pass"
+            ],
+            "cost": 80000,
+            "primary_skill_categories": [
+                "General",
+                "Passing"
+            ],
+            "secondary_skill_categories": [
+                "Agility",
+                "Strength"
+            ],
+            "max_count": 2
+        },
+        {
+            "name": "Piranha Warrior Blitzer",
+            "movement": 7,
+            "strength": 3,
+            "agility": 3,
+            "armor": 8,
+            "passing": 5,
+            "starting_skills": [
+                "Dodge",
+                "Jump Up"
+            ],
+            "traits": [
+                "Hit and Run"
+            ],
+            "cost": 90000,
+            "primary_skill_categories": [
+                "Agility",
+                "General"
+            ],
+            "secondary_skill_categories": [
+                "Strength"
+            ],
+            "max_count": 2
+        },
+        {
+            "name": "Jaguar Warrior Blocker",
+            "movement": 6,
+            "strength": 4,
+            "agility": 3,
+            "armor": 9,
+            "passing": 5,
+            "starting_skills": [
+                "Defensive",
+                "Dodge"
+            ],
+            "cost": 110000,
+            "primary_skill_categories": [
+                "General",
+                "Strength"
+            ],
+            "secondary_skill_categories": [
+                "Agility"
+            ],
+            "max_count": 4
+        }
+    ]
+}

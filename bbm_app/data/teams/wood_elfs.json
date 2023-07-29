@@ -1,4 +1,6 @@
-[
+{
+    "race_type": "WOD",
+    "positions": [
         {
             "name": "Wood Elf Lineman",
             "movement": 7,
@@ -8,8 +10,14 @@
             "passing": 4,
             "cost": 70000,
             "starting_skills": [],
-            "primary_skill_categories": ["Agility"],
-            "secondary_skill_categories": ["General", "Passing"]
+            "primary_skill_categories": [
+                "Agility"
+            ],
+            "secondary_skill_categories": [
+                "General",
+                "Passing"
+            ],
+            "max_count": 12
         },
         {
             "name": "Wood Elf Catcher",
@@ -19,9 +27,18 @@
             "armor": 7,
             "passing": 4,
             "cost": 90000,
-            "starting_skills": ["Catch", "Dodge"],
-            "primary_skill_categories": ["Agility"],
-            "secondary_skill_categories": ["General", "Passing"]
+            "starting_skills": [
+                "Catch",
+                "Dodge"
+            ],
+            "primary_skill_categories": [
+                "Agility"
+            ],
+            "secondary_skill_categories": [
+                "General",
+                "Passing"
+            ],
+            "max_count": 4
         },
         {
             "name": "Wood Elf Thrower",
@@ -31,21 +48,41 @@
             "armor": 8,
             "passing": 2,
             "cost": 95000,
-            "starting_skills": ["Pass", "Sure Hands"],
-            "primary_skill_categories": ["Agility", "Passing"],
-            "secondary_skill_categories": ["General"]
+            "starting_skills": [
+                "Pass",
+                "Sure Hands"
+            ],
+            "primary_skill_categories": [
+                "Agility",
+                "Passing"
+            ],
+            "secondary_skill_categories": [
+                "General"
+            ],
+            "max_count": 2
         },
         {
-            "name": "Wood Elf Wardancer",
+            "name": "Wardancer",
             "movement": 8,
             "strength": 3,
             "agility": 2,
             "armor": 7,
             "passing": 4,
             "cost": 120000,
-            "starting_skills": ["Block", "Dodge", "Leap", "Side Step"],
-            "primary_skill_categories": ["Agility"],
-            "secondary_skill_categories": ["General", "Passing"]
+            "starting_skills": [
+                "Block",
+                "Dodge",
+                "Leap",
+                "Side Step"
+            ],
+            "primary_skill_categories": [
+                "Agility"
+            ],
+            "secondary_skill_categories": [
+                "General",
+                "Passing"
+            ],
+            "max_count": 2
         },
         {
             "name": "Ent",
@@ -55,9 +92,26 @@
             "armor": 10,
             "passing": 6,
             "cost": 120000,
-            "starting_skills": ["Mighty Blow (+1)", "Stand Firm", "Strong Arm"],
-            "traits": ["Loner (4+)","Take Root", "Thick Skull", "Throw Team-Mate", "Timmm-ber"],
-            "primary_skill_categories": ["Strength"],
-            "secondary_skill_categories": ["General", "Agility"]
+            "starting_skills": [
+                "Mighty Blow (+1)",
+                "Stand Firm",
+                "Thick Skull",
+                "Strong Arm"
+            ],
+            "traits": [
+                "Loner (4+)",
+                "Take Root",
+                "Throw Team-Mate",
+                "Timmm-ber"
+            ],
+            "primary_skill_categories": [
+                "Strength"
+            ],
+            "secondary_skill_categories": [
+                "General",
+                "Agility"
+            ],
+            "max_count": 1
         }
     ]
+}

@@ -1,75 +1,137 @@
-[
+{
+  "race_type": "HUM",
+  "positions": [
     {
-        "name": "Human Lineman",
-        "movement": 6,
-        "strength": 3,
-        "agility": 3,
-        "armor": 9,
-        "passing": 4,
-        "cost": 50000,
-        "starting_skills": [],
-        "primary_skill_categories": ["General"],
-        "secondary_skill_categories": ["Agility", "Strength"]
+      "name": "Human Lineman",
+      "movement": 6,
+      "strength": 3,
+      "agility": 3,
+      "armor": 9,
+      "passing": 4,
+      "cost": 50000,
+      "starting_skills": [],
+      "primary_skill_categories": [
+        "General"
+      ],
+      "secondary_skill_categories": [
+        "Agility",
+        "Strength"
+      ],
+      "max_count": 16
     },
     {
-        "name": "Human Thrower",
-        "movement": 6,
-        "strength": 3,
-        "agility": 3,
-        "armor": 9,
-        "passing": 2,
-        "cost": 80000,
-        "starting_skills": ["Pass", "Sure Hands"],
-        "primary_skill_categories": ["General", "Passing"],
-        "secondary_skill_categories": ["Agility", "Strength"]
+      "name": "Human Thrower",
+      "movement": 6,
+      "strength": 3,
+      "agility": 3,
+      "armor": 9,
+      "passing": 2,
+      "cost": 80000,
+      "starting_skills": [
+        "Pass",
+        "Sure Hands"
+      ],
+      "primary_skill_categories": [
+        "General",
+        "Passing"
+      ],
+      "secondary_skill_categories": [
+        "Agility",
+        "Strength"
+      ],
+      "max_count": 2
     },
     {
-        "name": "Human Catcher",
-        "movement": 8,
-        "strength": 2,
-        "agility": 3,
-        "armor": 8,
-        "passing": 5,
-        "cost": 65000,
-        "starting_skills": ["Catch", "Dodge"],
-        "primary_skill_categories": ["Agility"],
-        "secondary_skill_categories": ["General", "Passing", "Strength"]
+      "name": "Human Catcher",
+      "movement": 8,
+      "strength": 2,
+      "agility": 3,
+      "armor": 8,
+      "passing": 5,
+      "cost": 65000,
+      "starting_skills": [
+        "Catch",
+        "Dodge"
+      ],
+      "primary_skill_categories": [
+        "Agility"
+      ],
+      "secondary_skill_categories": [
+        "General",
+        "Passing",
+        "Strength"
+      ],
+      "max_count": 4
     },
     {
-        "name": "Human Blitzer",
-        "movement": 7,
-        "strength": 3,
-        "agility": 3,
-        "armor": 9,
-        "passing": 4,
-        "cost": 85000,
-        "starting_skills": ["Block"],
-        "primary_skill_categories": ["General", "Strength"],
-        "secondary_skill_categories": ["Agility", "Passing"]
+      "name": "Human Blitzer",
+      "movement": 7,
+      "strength": 3,
+      "agility": 3,
+      "armor": 9,
+      "passing": 4,
+      "cost": 85000,
+      "starting_skills": [
+        "Block"
+      ],
+      "primary_skill_categories": [
+        "General",
+        "Strength"
+      ],
+      "secondary_skill_categories": [
+        "Agility",
+        "Passing"
+      ],
+      "max_count": 4
     },
     {
-        "name": "Human Halfling",
-        "movement": 5,
-        "strength": 2,
-        "agility": 3,
-        "armor": 7,
-        "passing": 4,
-        "cost": 30000,
-        "starting_skills": ["Dodge", "Right Stuff", "Stunty"],
-        "primary_skill_categories": ["Agility"],
-        "secondary_skill_categories": ["General", "Strength"]
+      "name": "Human Halfling",
+      "movement": 5,
+      "strength": 2,
+      "agility": 3,
+      "armor": 7,
+      "passing": 4,
+      "cost": 30000,
+      "starting_skills": [
+        "Dodge",
+        "Right Stuff",
+        "Stunty"
+      ],
+      "primary_skill_categories": [
+        "Agility"
+      ],
+      "secondary_skill_categories": [
+        "General",
+        "Strength"
+      ],
+      "max_count": 3
     },
     {
-        "name": "Human Ogre",
-        "movement": 5,
-        "strength": 5,
-        "agility": 4,
-        "armor": 10,
-        "passing": 5,
-        "cost": 140000,
-        "starting_skills": ["Mighty Blow (+1)"],
-        "traits": ["Bone Head", "Loner (4+)", "Thick Skull", "Throw Team Mate"],
-        "primary_skill_categories": ["Strength"],
-        "secondary_skill_categories": ["Agility", "General", "Passing"]
+      "name": "City Ogre",
+      "movement": 5,
+      "strength": 5,
+      "agility": 4,
+      "armor": 10,
+      "passing": 5,
+      "cost": 140000,
+      "starting_skills": [
+        "Mighty Blow (+1)"
+      ],
+      "traits": [
+        "Bone Head",
+        "Loner (4+)",
+        "Thick Skull",
+        "Throw Team Mate"
+      ],
+      "primary_skill_categories": [
+        "Strength"
+      ],
+      "secondary_skill_categories": [
+        "Agility",
+        "General",
+        "Passing"
+      ],
+      "max_count": 1
     }
-]
+  ]
+}

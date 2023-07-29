@@ -1,53 +1,96 @@
-[
-        {
-            "name": "Skink Runner",
-            "movement": 8,
-            "strength": 2,
-            "agility": 3,
-            "armor": 7,
-            "passing": 4,
-            "cost": 60000,
-            "starting_skills": ["Dodge"],
-            "traits": ["Stunty"],
-            "primary_skill_categories": ["Agility"],
-            "secondary_skill_categories": ["General", "Passing"]
-        },
-        {
-            "name": "Saurus",
-            "movement": 6,
-            "strength": 4,
-            "agility": 5,
-            "armor": 9,
-            "passing": 6,
-            "cost": 80000,
-            "starting_skills": [],
-            "primary_skill_categories": ["General", "Strength"],
-            "secondary_skill_categories": ["Agility"]
-        },
-        {
-            "name": "Chameleon Skink",
-            "movement": 7,
-            "strength": 2,
-            "agility": 3,
-            "armor": 7,
-            "passing": 4,
-            "cost": 70000,
-            "starting_skills": ["Dodge", "On the Ball", "Shadowing"],
-            "traits": ["Stunty"],
-            "primary_skill_categories": ["Agility"],
-            "secondary_skill_categories": ["General", "Passing"]
-        },
-        {
-            "name": "Kroxigor",
-            "movement": 6,
-            "strength": 5,
-            "agility": 5,
-            "armor": 9,
-            "passing": 5,
-            "cost": 130000,
-            "starting_skills": ["Mighty Blow", "Prehensile Tail"],
-            "traits": ["Thick Skull", "Bone Head", "Loner (4+)"],
-            "primary_skill_categories": ["Strength"],
-            "secondary_skill_categories": ["General"]
-        }
-]
+{
+  "race_type": "LIZ",
+  "positions": [
+    {
+      "name": "Skink",
+      "movement": 8,
+      "strength": 2,
+      "agility": 3,
+      "armor": 7,
+      "passing": 4,
+      "cost": 60000,
+      "starting_skills": [
+        "Dodge"
+      ],
+      "traits": [
+        "Stunty"
+      ],
+      "primary_skill_categories": [
+        "Agility"
+      ],
+      "secondary_skill_categories": [
+        "General",
+        "Passing"
+      ],
+      "max_count": 16
+    },
+    {
+      "name": "Saurus",
+      "movement": 6,
+      "strength": 4,
+      "agility": 5,
+      "armor": 9,
+      "passing": 6,
+      "cost": 80000,
+      "starting_skills": [],
+      "primary_skill_categories": [
+        "General",
+        "Strength"
+      ],
+      "secondary_skill_categories": [
+        "Agility"
+      ],
+      "max_count": 4
+    },
+    {
+      "name": "Chameleon Skink",
+      "movement": 7,
+      "strength": 2,
+      "agility": 3,
+      "armor": 7,
+      "passing": 4,
+      "cost": 70000,
+      "starting_skills": [
+        "Dodge",
+        "On the Ball",
+        "Shadowing"
+      ],
+      "traits": [
+        "Stunty"
+      ],
+      "primary_skill_categories": [
+        "Agility"
+      ],
+      "secondary_skill_categories": [
+        "General",
+        "Passing"
+      ],
+      "max_count": 2
+    },
+    {
+      "name": "Kroxigor",
+      "movement": 6,
+      "strength": 5,
+      "agility": 5,
+      "armor": 9,
+      "passing": 5,
+      "cost": 130000,
+      "starting_skills": [
+        "Mighty Blow",
+        "Prehensile Tail"
+      ],
+      "traits": [
+        "Thick Skull",
+        "Bone Head",
+        "Loner (4+)"
+      ],
+      "primary_skill_categories": [
+        "Strength"
+      ],
+      "secondary_skill_categories": [
+        "General"
+      ],
+      "max_count": 1
+    }
+  ]
+}

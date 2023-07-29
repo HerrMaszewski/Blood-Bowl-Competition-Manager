@@ -1,4 +1,6 @@
-[
+{
+    "race_type": "DAR",
+    "positions": [
         {
             "name": "Dark Elf Lineman",
             "movement": 6,
@@ -8,8 +10,14 @@
             "passing": 4,
             "cost": 70000,
             "starting_skills": [],
-            "primary_skill_categories": ["General", "Agility"],
-            "secondary_skill_categories": ["Passing"]
+            "primary_skill_categories": [
+                "General",
+                "Agility"
+            ],
+            "secondary_skill_categories": [
+                "Passing"
+            ],
+            "max_count": 12
         },
         {
             "name": "Dark Elf Runner",
@@ -19,9 +27,17 @@
             "armor": 8,
             "passing": 3,
             "cost": 80000,
-            "starting_skills": ["Dump-Off"],
-            "primary_skill_categories": ["General", "Agility"],
-            "secondary_skill_categories": ["Passing"]
+            "starting_skills": [
+                "Dump-Off"
+            ],
+            "primary_skill_categories": [
+                "General",
+                "Agility"
+            ],
+            "secondary_skill_categories": [
+                "Passing"
+            ],
+            "max_count": 2
         },
         {
             "name": "Assassin",
@@ -31,10 +47,20 @@
             "armor": 7,
             "passing": 5,
             "cost": 90000,
-            "starting_skills": ["Shadowing"],
-            "traits": ["Stab"],
-            "primary_skill_categories": ["General", "Agility"],
-            "secondary_skill_categories": ["Passing"]
+            "starting_skills": [
+                "Shadowing"
+            ],
+            "traits": [
+                "Stab"
+            ],
+            "primary_skill_categories": [
+                "General",
+                "Agility"
+            ],
+            "secondary_skill_categories": [
+                "Passing"
+            ],
+            "max_count": 2
         },
         {
             "name": "Dark Elf Blitzer",
@@ -44,9 +70,17 @@
             "armor": 8,
             "passing": 4,
             "cost": 100000,
-            "starting_skills": ["Block"],
-            "primary_skill_categories": ["General", "Agility"],
-            "secondary_skill_categories": ["Passing"]
+            "starting_skills": [
+                "Block"
+            ],
+            "primary_skill_categories": [
+                "General",
+                "Agility"
+            ],
+            "secondary_skill_categories": [
+                "Passing"
+            ],
+            "max_count": 4
         },
         {
             "name": "Witch Elf",
@@ -56,8 +90,19 @@
             "armor": 7,
             "passing": 4,
             "cost": 110000,
-            "starting_skills": ["Dodge", "Frenzy", "Jump Up"],
-            "primary_skill_categories": ["General", "Agility"],
-            "secondary_skill_categories": ["Passing"]
+            "starting_skills": [
+                "Dodge",
+                "Frenzy",
+                "Jump Up"
+            ],
+            "primary_skill_categories": [
+                "General",
+                "Agility"
+            ],
+            "secondary_skill_categories": [
+                "Passing"
+            ],
+            "max_count": 2
         }
-]
+    ]
+}

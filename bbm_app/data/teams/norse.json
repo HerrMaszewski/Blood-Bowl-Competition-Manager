@@ -1,4 +1,6 @@
-[
+{
+    "race_type": "NOR",
+    "positions": [
         {
             "name": "Norse Lineman",
             "cost": 50000,
@@ -7,10 +9,22 @@
             "agility": 3,
             "passing": 4,
             "armor": 8,
-            "starting_skills": ["Block"],
-            "traits": ["Drunkard", "Thick Skull"],
-            "primary_skill_categories": ["General"],
-            "secondary_skill_categories": ["Agility", "Passing", "Strength"]
+            "starting_skills": [
+                "Block"
+            ],
+            "traits": [
+                "Drunkard",
+                "Thick Skull"
+            ],
+            "primary_skill_categories": [
+                "General"
+            ],
+            "secondary_skill_categories": [
+                "Agility",
+                "Passing",
+                "Strength"
+            ],
+            "max_count": 16
         },
         {
             "name": "Beer Boar",
@@ -20,9 +34,18 @@
             "agility": 3,
             "passing": null,
             "armor": 6,
-            "starting_skills": ["Dodge", "No Hands", "Pick-me-up", "Stunty", "Titchy"],
+            "starting_skills": [
+                "Dodge",
+                "No Hands",
+                "Pick-me-up",
+                "Stunty",
+                "Titchy"
+            ],
             "primary_skill_categories": [],
-            "secondary_skill_categories": ["Agility"]
+            "secondary_skill_categories": [
+                "Agility"
+            ],
+            "max_count": 2
         },
         {
             "name": "Norse Berserker",
@@ -32,9 +55,20 @@
             "agility": 3,
             "passing": 5,
             "armor": 8,
-            "starting_skills": ["Block", "Frenzy", "Jump Up"],
-            "primary_skill_categories": ["General", "Strength"],
-            "secondary_skill_categories": ["Agility", "Passing"]
+            "starting_skills": [
+                "Block",
+                "Frenzy",
+                "Jump Up"
+            ],
+            "primary_skill_categories": [
+                "General",
+                "Strength"
+            ],
+            "secondary_skill_categories": [
+                "Agility",
+                "Passing"
+            ],
+            "max_count": 2
         },
         {
             "name": "Valkyrie",
@@ -44,9 +78,21 @@
             "agility": 3,
             "passing": 3,
             "armor": 8,
-            "starting_skills": ["Catch", "Dauntless", "Pass", "Strip Ball"],
-            "primary_skill_categories": ["Agility", "General", "Passing"],
-            "secondary_skill_categories": ["Strength"]
+            "starting_skills": [
+                "Catch",
+                "Dauntless",
+                "Pass",
+                "Strip Ball"
+            ],
+            "primary_skill_categories": [
+                "Agility",
+                "General",
+                "Passing"
+            ],
+            "secondary_skill_categories": [
+                "Strength"
+            ],
+            "max_count": 2
         },
         {
             "name": "Ulfwerener",
@@ -56,9 +102,17 @@
             "agility": 4,
             "passing": null,
             "armor": 9,
-            "starting_skills": ["Frenzy"],
-            "primary_skill_categories": ["General", "Strength"],
-            "secondary_skill_categories": ["Agility"]
+            "starting_skills": [
+                "Frenzy"
+            ],
+            "primary_skill_categories": [
+                "General",
+                "Strength"
+            ],
+            "secondary_skill_categories": [
+                "Agility"
+            ],
+            "max_count": 2
         },
         {
             "name": "Yhetee",
@@ -68,9 +122,23 @@
             "agility": 4,
             "passing": null,
             "armor": 9,
-            "starting_skills": ["Disturbing Presence", "Frenzy"],
-            "traits": ["Loner (4+)", "Unchannelled Fury", "Claws"],
-            "primary_skill_categories": ["Strength"],
-            "secondary_skill_categories": ["Agility", "General"]
+            "starting_skills": [
+                "Disturbing Presence",
+                "Frenzy"
+            ],
+            "traits": [
+                "Loner (4+)",
+                "Unchannelled Fury",
+                "Claws"
+            ],
+            "primary_skill_categories": [
+                "Strength"
+            ],
+            "secondary_skill_categories": [
+                "Agility",
+                "General"
+            ],
+            "max_count": 1
         }
     ]
+}
