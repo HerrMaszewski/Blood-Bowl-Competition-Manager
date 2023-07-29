@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
-from .models import Coach
+from .models import Coach, Team, Race
 
 User = get_user_model()
 
@@ -32,7 +32,7 @@ class LoginForm(forms.Form):
 
 class CreateCoachForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
-    password2 = forms.CharField(widget=forms.PasswordInput, label='Powtórz hasło')
+    password2 = forms.CharField(widget=forms.PasswordInput, label='Repeat Password')
 
     class Meta:
         model = Coach
@@ -43,7 +43,7 @@ class CreateCoachForm(forms.ModelForm):
         if Coach.objects.filter(coach_name=coach_name).exists():
             raise forms.ValidationError('Jest już trener który się tak nazywa')
         if User.objects.filter(username=coach_name).exists():
-            raise forms.ValidationError('This username is already taken')
+            raise forms.ValidationError('Jest już trener który się tak nazywa')
         return coach_name
 
     def clean(self):
@@ -59,3 +59,11 @@ class CreateCoachForm(forms.ModelForm):
         if commit:
             coach.save()
         return coach
+
+
+class CreateTeamForm(forms.ModelForm):
+    race = forms.ModelChoiceField(queryset=Race.objects.all())
+
+    class Meta:
+        model = Team
+        fields = ['team_name', 'race']

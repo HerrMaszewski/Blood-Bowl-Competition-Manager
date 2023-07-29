@@ -148,7 +148,8 @@ class Team(models.Model):
                 self.players.add(journeyman)
 
     def save(self, *args, **kwargs):
-        self.check_position_limits()
+        if self.pk:
+            self.check_position_limits()
         super().save(*args, **kwargs)
 
 

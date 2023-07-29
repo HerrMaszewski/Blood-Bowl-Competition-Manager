@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="content">
+    <h2>Create your team</h2>
+    <form method="post" action="{% url 'create_team' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Confirm">
+    </form>
+    </div>
+{% endblock %}

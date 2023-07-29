@@ -1,81 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-    <style>
-        body {
-            background-image: url('https://c4.wallpaperflare.com/wallpaper/757/696/905/warhammer-fantasy-art-blood-bowl-wallpaper-preview.jpg');
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0; /* Remove default margin for the body */
-        }
+{% extends 'base.html' %}
 
-        .navbar {
-            background-color: black;
-            text-align: center;
-            padding: 10px 0; /* Adjust the padding as needed */
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-        }
+{% block title %}
+Login
+{% endblock title %}
 
-        .navbar h1 {
-            color: red;
-            margin: 0; /* Remove default margin for the h1 element */
-        }
-
-        .content {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 5px;
-        }
-
-        .content form {
-            margin-top: 20px; /* Add margin between the navbar and the form */
-        }
-
-        .content form label {
-            display: block;
-            margin-bottom: 5px; /* Add some spacing between labels and inputs */
-        }
-
-        .content form input {
-            margin-bottom: 10px; /* Add some spacing between inputs */
-        }
-
-        .content form button,
-        .content form a {
-            background-color: blue;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin-right: 10px; /* Add some spacing between the buttons/links */
-        }
-
-        .content form button {
-            background-color: green; /* Customize the login button color */
-        }
-    </style>
-</head>
-<body>
-    <div class="navbar">
-        <h1>Blood Bowl Manager</h1>
-    </div>
-      <div class="content">
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" style="background-color: green; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Log in</button>
-            <a href="{% url 'registration' %}" style="background-color: blue; color: white; padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 10px;">Register</a>
-        </form>
-    </div>
-</body>
-</html>
+{% block content %}
+<div class="registration-form">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" style="background-color: green; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Log in</button>
+        <a href="{% url 'registration' %}" style="background-color: blue; color: white; padding: 10px 20px; border: none; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 10px;">Register</a>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,79 @@
+body {
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/757/696/905/warhammer-fantasy-art-blood-bowl-wallpaper-preview.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.navbar {
+    background-color: black;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbar h1 {
+    color: red;
+    margin: 0;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.content form {
+    margin-top: 20px;
+}
+
+.content form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.content form input {
+    margin-bottom: 10px;
+}
+
+.content form button,
+.content form a {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.content form button {
+    background-color: green;
+}
+
+.team-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.race-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
