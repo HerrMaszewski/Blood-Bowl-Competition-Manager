@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% load tagi %}
+
+{% block content %}
+<h1>{{ team.team_name }}</h1>
+<h2>Treasury: {{ team.treasury }}</h2>
+
+<table>
+    <tr>
+        <th>No.</th>
+        <th>Player Name</th>
+        <th>Position</th>
+        <th>MA</th>
+        <th>ST</th>
+        <th>AG</th>
+        <th>PA</th>
+        <th>AV</th>
+        <th>NI</th>
+        <th>Skills</th>
+        <th>SPP</th>
+        <th>LVL</th>
+        <th>ACTIVE</th>
+        <th>CV</th>
+    </tr>
+    {% for player in players %}
+    <tr>
+        <td>{{ player.number }}</td>
+        <td>{{ player.name }}</td>
+        <td>{{ player.position.name }}</td>
+        <td>{{ player.movement }}</td>
+        <td>{{ player.strength }}</td>
+        <td>{{ player.agility }}</td>
+        <td>{{ player.passing }}</td>
+        <td>{{ player.armor }}</td>
+        <td>{{ player.niggling_injuries }}</td>
+        <td>
+        {% for skill in player.skills.all %}
+            {{ skill }},
+        {% endfor %}
+        {% for trait in player.traits.all %}
+            {{ trait }},
+        {% endfor %}
+    </td>
+        <td>{{ player.spp }}</td>
+        <td>{{ player.get_level_display }}</td>
+        <td>{% if player.status == 'injured' %}MNG{% else %}✔{% endif %}</td>
+        <td>{{ player.value|to_k }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Add a new player</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Player</button>
+</form>
+{% endblock %}
+
+{% if form_errors %}
+    <div class="alert alert-danger">
+        {{ form_errors }}
+    </div>
+{% endif %}

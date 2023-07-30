@@ -5,10 +5,10 @@ from django.http import HttpResponseRedirect
 
 from django.views.generic.edit import FormView
 from django.views import View
-from .models import Race, Team, Coach
+from .models import Race, Team, Coach, Player
 
 
-from .forms import LoginForm, CreateCoachForm, CreateTeamForm
+from .forms import LoginForm, CreateCoachForm, CreateTeamForm, PlayerForm
 
 
 class LoginView(FormView):
@@ -41,20 +41,50 @@ class CreateTeamView(FormView):
     template_name = 'create_team.html'
 
     def form_valid(self, form):
-        team = form.save(commit=False)
-        team.coach = Coach.objects.get(user=self.request.user)
-        team.race = form.cleaned_data['race']  # This is already a Race object, so assign it directly
-        team.save()
+        team = form.save(commit=False)  # Don't save yet, we'll do that after setting coach and race
+        team.coach = Coach.objects.get(user=self.request.user)  # set the coach
+        team.race = form.cleaned_data['race']  # set the race
+        team.save()  # Now we can save the team instance
 
-        self.request.session['team_id'] = team.id
-
-        return redirect('manage_team', team_id=team.id)
+        return redirect('manage_team', team_pk=team.pk)
 
 
-class ManageTeamView(View):
-    def get(self, request, team_id):
-        team = Team.objects.get(id=team_id)
-        pass
+class ManageTeamView(FormView):
+    template_name = "manage_team.html"
+
+    def get(self, request, *args, **kwargs):
+        team_pk = kwargs['team_pk']
+        team = Team.objects.get(pk=team_pk)
+        form = PlayerForm(team=team)
+        players = team.players.order_by('number')
+        return render(request, self.template_name, {'team': team, 'form': form, 'players': players})
+
+    def post(self, request, *args, **kwargs):
+        team_pk = kwargs['team_pk']
+        team = Team.objects.get(pk=team_pk)
+        form = PlayerForm(request.POST, team=team)
+        if form.is_valid():
+            player = form.save(commit=False)
+            player.player_team = team  # Set the team of the player
+            position_selected = form.cleaned_data.get('position')
+            player.movement = position_selected.movement
+            player.strength = position_selected.strength
+            player.agility = position_selected.agility
+            player.armor = position_selected.armor
+            player.passing = position_selected.passing
+            player.value = position_selected.cost
+            player.save()
+            player.traits.set(position_selected.traits.all())
+            player.skills.set(position_selected.starting_skills.all())
+            player.primary_skill_categories.set(position_selected.primary_skill_categories.all())
+            player.secondary_skill_categories.set(position_selected.secondary_skill_categories.all())
+            team.treasury -= player.position.cost
+            team.save()
+            return redirect('manage_team', team_pk=team.pk)
+        else:
+            players = team.players.all()
+            return render(request, self.template_name, {'team': team, 'form': form, 'players': players})
+
 
 
 class MainPageView(View):

@@ -103,29 +103,42 @@ class Graveyard(models.Model):
 
 
 class Team(models.Model):
-    coach = models.OneToOneField(Coach, on_delete=models.CASCADE, related_name='team')
-    team_name = models.CharField(max_length=100, unique=True,)
+    coach = models.ForeignKey(Coach, on_delete=models.CASCADE, related_name='teams')
+    team_name = models.CharField(max_length=100, unique=True, null=True)
     race = models.ForeignKey(Race, on_delete=models.CASCADE)
-    team_funds = models.IntegerField(default=1000000)
+    treasury = models.IntegerField(default=1000000)
     team_re_roll = models.IntegerField(default=0)
-    fan_factor = models.IntegerField(default=0)
+    fan_factor = models.IntegerField(default=1)
     assistant_coaches = models.IntegerField(default=0)
     cheerleaders = models.IntegerField(default=0)
     apothecary = models.BooleanField(default=False)
-    players = models.ManyToManyField('Player', related_name='teams')
+    ctv = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.team_name
 
-    def check_position_limits(self):
+    #def check_position_limits(self):
+        #race_positions = self.race.positions.all()
+
+       # for position in race_positions:
+          #  position_limit = RacePositionLimit.objects.get(race=self.race, position=position).max_count
+          #  player_count = self.players.filter(position=position).count()
+
+          #  if player_count > position_limit:
+          #      raise ValidationError(f'Team {self.team_name} has too many players of position {position.name}. Maximum is {position_limit}')
+
+    def get_available_positions(self):
+        positions = []
         race_positions = self.race.positions.all()
 
         for position in race_positions:
             position_limit = RacePositionLimit.objects.get(race=self.race, position=position).max_count
             player_count = self.players.filter(position=position).count()
 
-            if player_count > position_limit:
-                raise ValidationError(f'Team {self.team_name} has too many players of position {position.name}. Maximum is {position_limit}')
+            if player_count < position_limit:
+                positions.append(position.id)
+
+        return positions
 
     def fill_journeyman(self):
         active_players = self.players.filter(is_active=True)
@@ -147,10 +160,17 @@ class Team(models.Model):
                 )
                 self.players.add(journeyman)
 
+    def calculate_ctv(self):
+        active_players = self.players.filter(status='active')
+        return sum(player.value for player in active_players)
+
+    def update_ctv(self):
+        self.ctv = self.calculate_ctv()
+        self.save()
+
     def save(self, *args, **kwargs):
-        if self.pk:
-            self.check_position_limits()
-        super().save(*args, **kwargs)
+        super().save(*args, **kwargs)  # Save the instance first
+
 
 
 class Player(models.Model):
@@ -171,11 +191,10 @@ class Player(models.Model):
 
     name = models.CharField(max_length=64)
     position = models.ForeignKey(Position, on_delete=models.CASCADE)
-    team = models.ForeignKey(Team, on_delete=models.SET_NULL, null=True, related_name='active_players')
     former_team = models.ForeignKey(Team, on_delete=models.SET_NULL, null=True, related_name='former_players')
     graveyard = models.ForeignKey(Team, on_delete=models.CASCADE, null=True, blank=True, related_name='dead_players')
-    level = models.PositiveIntegerField(choices=LEVEL_CHOICES)
-    spp = models.PositiveIntegerField()
+    level = models.PositiveIntegerField(choices=LEVEL_CHOICES, default=1)
+    spp = models.PositiveIntegerField(default=0)
     value = models.PositiveIntegerField()
     movement = models.IntegerField(default=0)
     strength = models.IntegerField(default=0)
@@ -184,13 +203,16 @@ class Player(models.Model):
     passing = models.IntegerField(default=0)
     skills = models.ManyToManyField(Skill, related_name='current_skills')
     traits = models.ManyToManyField(Trait)
+    primary_skill_categories = models.ManyToManyField(SkillCategory, related_name='primary_players')
+    secondary_skill_categories = models.ManyToManyField(SkillCategory, related_name='secondary_players', blank=True)
     is_journeyman = models.BooleanField(default=False)
-    number = models.PositiveIntegerField(null=True)
+    number = models.IntegerField()
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='active')
-
+    niggling_injuries = models.IntegerField(default=0)
+    player_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='players', null=True)
 
     class Meta:
-        unique_together = ('team', 'number')
+        unique_together = ('player_team', 'number')
 
     def calculate_value(self):
         # Calculate the player's value
@@ -200,22 +222,6 @@ class Player(models.Model):
         # Check if the player can level up
         pass
 
-    def die(self):
-        # Remove the player from the team
-        self.team = None
-        # Reset the player's number
-        self.number = None
-        # Set the player's value to 0
-        self.value = 0
-        # Save changes
-        self.save()
-        # Add the player to the team's graveyard
-        self.teams.first().graveyard.players.add(self)
 
     def save(self, *args, **kwargs):
-        if self.number < 1 or self.number > 16:
-            raise ValidationError('Player number must be between 1 and 16.')
-        if self.team and self.team.players.filter(number=self.number).exists():
-            raise ValidationError(f'Player number {self.number} already exists on this team.')
         super().save(*args, **kwargs)
-

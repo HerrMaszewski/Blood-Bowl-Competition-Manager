@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
-from .models import Coach, Team, Race
+from .models import Coach, Team, Race, Player, Position, RacePositionLimit
 
 User = get_user_model()
 
@@ -67,3 +67,38 @@ class CreateTeamForm(forms.ModelForm):
     class Meta:
         model = Team
         fields = ['team_name', 'race']
+
+
+class PlayerForm(forms.ModelForm):
+    class Meta:
+        model = Player
+        fields = ['name', 'number', 'position']
+
+    def __init__(self, *args, **kwargs):
+        self.team = kwargs.pop('team', None)
+        super().__init__(*args, **kwargs)
+        if self.team:
+            self.fields['position'].queryset = Position.objects.filter(race=self.team.race)
+            taken_numbers = Player.objects.filter(player_team=self.team).values_list('number', flat=True)
+            self.fields['number'].choices = [(i, i) for i in range(1, 17) if i not in taken_numbers]
+
+    def clean(self):
+        cleaned_data = super().clean()
+        position = cleaned_data.get("position")
+        if position and position.cost > self.team.treasury:
+            self.add_error('position', 'Insufficient funds.')
+
+        # Check if position limit has been reached
+        race_position_limit = RacePositionLimit.objects.filter(race=self.team.race, position=position).first()
+        if race_position_limit:
+            position_count = self.team.players.filter(position=position).count()
+            if position_count >= race_position_limit.max_count:
+                self.add_error('position', 'Maximum number of this position has been reached for the team.')
+
+    def clean_number(self):
+        number = self.cleaned_data.get('number')
+        if number and (number < 1 or number > 16):
+            raise forms.ValidationError("Invalid number. Please choose a number between 1 and 16.")
+        if number and Player.objects.filter(player_team=self.team, number=number).exists():
+            raise forms.ValidationError("This number is already in use.")
+        return number
