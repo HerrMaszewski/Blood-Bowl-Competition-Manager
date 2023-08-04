@@ -20,7 +20,7 @@ def test_valid_login(client):
 def test_invalid_username(client):
     response = client.post('/login/', {'coach_name': 'nonexistentuser', 'password': 'testpass'})
     assert response.status_code == 200
-    assert 'Niepoprawna nazwa użytkownika lub hasło' in response.content.decode()
+    assert 'User does not exist' in response.content.decode()
 
 
 @pytest.mark.django_db
@@ -29,7 +29,7 @@ def test_invalid_password(client):
     Coach.objects.create(user=user)
     response = client.post('/login/', {'coach_name': 'testuser', 'password': 'wrongpass'})
     assert response.status_code == 200
-    assert 'Niepoprawna nazwa użytkownika lub hasło' in response.content.decode()
+    assert 'Invalid password' in response.content.decode()
 
 
 @pytest.mark.django_db
@@ -37,7 +37,7 @@ def test_user_not_coach(client):
     user = User.objects.create_user(username='testuser', password='testpass')
     response = client.post('/login/', {'coach_name': 'testuser', 'password': 'testpass'})
     assert response.status_code == 200
-    assert 'Niepoprawna nazwa użytkownika lub hasło' in response.content.decode()
+    assert 'Coach does not exist' in response.content.decode()
 
 # Testy dla RegistrationView
 
