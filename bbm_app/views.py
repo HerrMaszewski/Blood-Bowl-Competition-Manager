@@ -8,7 +8,7 @@ from django.views import View
 from .models import Race, Team, Coach, Player
 
 
-from .forms import LoginForm, CreateCoachForm, CreateTeamForm, PlayerForm
+from .forms import LoginForm, CreateCoachForm, CreateTeamForm, ManageTeamForm
 
 
 class LoginView(FormView):
@@ -41,10 +41,10 @@ class CreateTeamView(FormView):
     template_name = 'create_team.html'
 
     def form_valid(self, form):
-        team = form.save(commit=False)  # Don't save yet, we'll do that after setting coach and race
-        team.coach = Coach.objects.get(user=self.request.user)  # set the coach
-        team.race = form.cleaned_data['race']  # set the race
-        team.save()  # Now we can save the team instance
+        team = form.save(commit=False)
+        team.coach = Coach.objects.get(user=self.request.user)
+        team.race = form.cleaned_data['race']
+        team.save()
 
         return redirect('manage_team', team_pk=team.pk)
 
@@ -55,17 +55,17 @@ class ManageTeamView(FormView):
     def get(self, request, *args, **kwargs):
         team_pk = kwargs['team_pk']
         team = Team.objects.get(pk=team_pk)
-        form = PlayerForm(team=team)
+        form = ManageTeamForm(team=team)
         players = team.players.order_by('number')
         return render(request, self.template_name, {'team': team, 'form': form, 'players': players})
 
     def post(self, request, *args, **kwargs):
         team_pk = kwargs['team_pk']
         team = Team.objects.get(pk=team_pk)
-        form = PlayerForm(request.POST, team=team)
+        form = ManageTeamForm(request.POST, team=team)
         if form.is_valid():
             player = form.save(commit=False)
-            player.player_team = team  # Set the team of the player
+            player.player_team = team
             position_selected = form.cleaned_data.get('position')
             player.movement = position_selected.movement
             player.strength = position_selected.strength

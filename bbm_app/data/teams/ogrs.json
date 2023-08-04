@@ -36,11 +36,10 @@
             "passing": 5,
             "cost": 140000,
             "starting_skills": [
-                "Mighty Blow (+1)"
+                "Mighty Blow (+1)", "Thick Skull"
             ],
             "traits": [
                 "Bone-Head",
-                "Thick Skull",
                 "Throw Team-Mate"
             ],
             "primary_skill_categories": [
@@ -63,11 +62,11 @@
             "cost": 145000,
             "starting_skills": [
                 "Mighty Blow (+1)",
-                "Pass"
+                "Pass",
+                "Thick Skull"
             ],
             "traits": [
                 "Bone-Head",
-                "Thick Skull",
                 "Kick Team-Mate"
             ],
             "primary_skill_categories": [

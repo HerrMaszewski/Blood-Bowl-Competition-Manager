@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.core.exceptions import ValidationError
 
 
 class Coach(models.Model):
@@ -117,16 +116,6 @@ class Team(models.Model):
     def __str__(self):
         return self.team_name
 
-    #def check_position_limits(self):
-        #race_positions = self.race.positions.all()
-
-       # for position in race_positions:
-          #  position_limit = RacePositionLimit.objects.get(race=self.race, position=position).max_count
-          #  player_count = self.players.filter(position=position).count()
-
-          #  if player_count > position_limit:
-          #      raise ValidationError(f'Team {self.team_name} has too many players of position {position.name}. Maximum is {position_limit}')
-
     def get_available_positions(self):
         positions = []
         race_positions = self.race.positions.all()
@@ -169,8 +158,7 @@ class Team(models.Model):
         self.save()
 
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)  # Save the instance first
-
+        super().save(*args, **kwargs)
 
 
 class Player(models.Model):
@@ -215,13 +203,12 @@ class Player(models.Model):
         unique_together = ('player_team', 'number')
 
     def calculate_value(self):
-        # Calculate the player's value
         pass
 
     def check_level_up(self):
-        # Check if the player can level up
         pass
 
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
+

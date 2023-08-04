@@ -69,7 +69,7 @@ class CreateTeamForm(forms.ModelForm):
         fields = ['team_name', 'race']
 
 
-class PlayerForm(forms.ModelForm):
+class ManageTeamForm(forms.ModelForm):
     class Meta:
         model = Player
         fields = ['name', 'number', 'position']
@@ -87,8 +87,6 @@ class PlayerForm(forms.ModelForm):
         position = cleaned_data.get("position")
         if position and position.cost > self.team.treasury:
             self.add_error('position', 'Insufficient funds.')
-
-        # Check if position limit has been reached
         race_position_limit = RacePositionLimit.objects.filter(race=self.team.race, position=position).first()
         if race_position_limit:
             position_count = self.team.players.filter(position=position).count()
@@ -102,3 +100,5 @@ class PlayerForm(forms.ModelForm):
         if number and Player.objects.filter(player_team=self.team, number=number).exists():
             raise forms.ValidationError("This number is already in use.")
         return number
+
+
