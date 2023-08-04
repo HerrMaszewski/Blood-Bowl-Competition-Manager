@@ -19,4 +19,4 @@ class Command(BaseCommand):
                     print(f'Processing skill: {skill_name}')
                     skill, created = Skill.objects.get_or_create(name=skill_name)
                     category.skills.add(skill)
-        self.stdout.write(self.style.SUCCESS('Umiejętności dodane'))
+        self.stdout.write(self.style.SUCCESS('Skills added'))

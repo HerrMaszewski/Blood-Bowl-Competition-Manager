@@ -1,5 +1,4 @@
 from django import forms
-from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from .models import Coach, Team, Race, Player, Position, RacePositionLimit
@@ -18,13 +17,13 @@ class LoginForm(forms.Form):
         try:
             user = User.objects.get(username=coach_name)
         except User.DoesNotExist:
-            raise ValidationError('Niepoprawna nazwa użytkownika lub hasło')
+            raise ValidationError('User does not exist')
         if not user.check_password(password):
-            raise ValidationError('Niepoprawna nazwa użytkownika lub hasło')
+            raise ValidationError('Invalid password')
         try:
             coach = Coach.objects.get(user=user)
         except Coach.DoesNotExist:
-            raise ValidationError('Niepoprawna nazwa użytkownika lub hasło')
+            raise ValidationError('Coach does not exist')
 
         self.user = user
         self.coach = coach
@@ -41,15 +40,15 @@ class CreateCoachForm(forms.ModelForm):
     def clean_coach_name(self):
         coach_name = self.cleaned_data['coach_name']
         if Coach.objects.filter(coach_name=coach_name).exists():
-            raise forms.ValidationError('Jest już trener który się tak nazywa')
+            raise forms.ValidationError('There is already a Coach with this name')
         if User.objects.filter(username=coach_name).exists():
-            raise forms.ValidationError('Jest już trener który się tak nazywa')
+            raise forms.ValidationError('There is already a Coach with this name')
         return coach_name
 
     def clean(self):
         cleaned_data = super().clean()
         if cleaned_data.get('password') != cleaned_data.get('password2'):
-            self.add_error('password2', 'Hasła nie są identyczne')
+            self.add_error('password2', 'Passwords are not identical')
 
     def save(self, commit=True):
         user = User.objects.create_user(username=self.cleaned_data['coach_name'],

@@ -1,11 +1,9 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.urls import reverse_lazy
-from django.http import HttpResponseRedirect
-
 from django.views.generic.edit import FormView
 from django.views import View
-from .models import Race, Team, Coach, Player
+from .models import Team, Coach
 
 
 from .forms import LoginForm, CreateCoachForm, CreateTeamForm, ManageTeamForm
@@ -84,7 +82,6 @@ class ManageTeamView(FormView):
         else:
             players = team.players.all()
             return render(request, self.template_name, {'team': team, 'form': form, 'players': players})
-
 
 
 class MainPageView(View):

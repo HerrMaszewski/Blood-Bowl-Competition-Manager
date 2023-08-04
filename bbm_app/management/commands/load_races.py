@@ -17,4 +17,4 @@ class Command(BaseCommand):
                     reroll_cost=race_data['reroll_cost'],
                     has_apothecary=race_data['has_apothecary']
                 )
-        self.stdout.write(self.style.SUCCESS('Rasy dodane'))
+        self.stdout.write(self.style.SUCCESS('Races added'))

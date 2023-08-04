@@ -127,7 +127,7 @@ class ManageTeamViewTest(TestCase):
         )
         self.team = Team.objects.create(coach=coach, race=self.race, team_name='Test Team')
         self.client.login(username='test_coach', password='password123')
-        RacePositionLimit.objects.create(race=self.race, position=self.position, max_count=4)  # Creating RacePositionLimit  # Creating RacePositionLimit
+        RacePositionLimit.objects.create(race=self.race, position=self.position, max_count=4)
 
     def test_create_player_successful(self):
         data = {
@@ -136,7 +136,7 @@ class ManageTeamViewTest(TestCase):
             'position': self.position.pk,
         }
         response = self.client.post(reverse('manage_team', args=[self.team.pk]), data)
-        self.assertEqual(response.status_code, 302)  # Redirects after successful creation
+        self.assertEqual(response.status_code, 302)
         player = Player.objects.get(name='Player Name')
         self.assertEqual(player.number, 1)
         self.assertEqual(player.position, self.position)
@@ -152,7 +152,7 @@ class ManageTeamViewTest(TestCase):
             'position': self.position.pk
         }
         response = self.client.post(reverse('manage_team', kwargs={'team_pk': self.team.pk}), data)
-        self.assertEqual(response.status_code, 200)  # Stays on the page as form is invalid
+        self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Insufficient funds.')
 
     def test_create_player_exceeding_position_limit(self):
@@ -168,7 +168,6 @@ class ManageTeamViewTest(TestCase):
         response = self.client.post(reverse('manage_team', kwargs={'team_pk': self.team.pk}), player_data)
         self.assertEqual(response.status_code, 200)
         self.assertFalse(Player.objects.filter(name='Player One').exists())
-
 
     def test_create_player_invalid_number(self):
         player_data = {

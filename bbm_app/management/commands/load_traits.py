@@ -13,4 +13,4 @@ class Command(BaseCommand):
             data = json.load(json_file)
             for trait in data:
                 Trait.objects.create(name=trait['name'])
-        self.stdout.write(self.style.SUCCESS('Cechy dodane'))
+        self.stdout.write(self.style.SUCCESS('Traits added'))

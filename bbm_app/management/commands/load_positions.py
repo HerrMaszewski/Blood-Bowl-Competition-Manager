@@ -68,4 +68,4 @@ class Command(BaseCommand):
                     RacePositionLimit.objects.get_or_create(race=race, position=position,
                                                             defaults={'max_count': position_data['max_count']})
 
-        self.stdout.write(self.style.SUCCESS('Pozycje dodane z limitami'))
+        self.stdout.write(self.style.SUCCESS('Positions added'))
