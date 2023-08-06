@@ -96,7 +96,8 @@
             "traits": [
                 "Foul Appearance",
                 "Regeneration",
-                "No Hands"
+                "No Hands",
+                "Block"
             ],
             "cost": 70000,
             "primary_skill_categories": [

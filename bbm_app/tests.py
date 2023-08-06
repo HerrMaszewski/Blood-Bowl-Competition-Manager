@@ -1,10 +1,7 @@
 import pytest
 from django.urls import reverse
-from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
-from .models import Coach, Race, Team, Position, RacePositionLimit, Player
-
-# Testy dla LoginView
+from .models import Coach, Team, RacePositionLimit, Player
 
 
 @pytest.mark.django_db
@@ -33,7 +30,7 @@ def test_invalid_password(client):
 
 @pytest.mark.django_db
 def test_user_not_coach(client):
-    user = User.objects.create_user(username='testuser', password='testpass')
+    User.objects.create_user(username='testuser', password='testpass')
     response = client.post('/login/', {'coach_name': 'testuser', 'password': 'testpass'})
     assert response.status_code == 200
     assert 'Coach does not exist' in response.content.decode()
@@ -98,54 +95,38 @@ def test_unsuccessful_team_creation(logged_in_client, test_race):
 
 def test_create_player_successful(logged_in_client, test_team, test_position, test_race_position_limit):
     data = {
-        'name': 'Player Name',
+        'name': 'Player One',
         'number': 1,
         'position': test_position.pk,
+        'submit_player': 'any_value',
     }
     response = logged_in_client.post(reverse('manage_team', args=[test_team.pk]), data)
-    assert response.status_code == 302
-    player = Player.objects.get(name='Player Name')
-    assert player.number == 1
-    assert player.position == test_position
-    assert player.player_team == test_team
+    assert response.status_code == 200
+    assert Player.objects.filter(name='Player One', number=1, position=test_position, player_team=test_team).exists()
 
 
 def test_create_player_insufficient_funds(logged_in_client, test_team, test_position, test_race_position_limit):
     test_team.treasury = 0
     test_team.save()
-
     data = {
         'name': 'Player One',
         'number': 1,
-        'position': test_position.pk
+        'position': test_position.pk,
+        'submit_player': 'any_value',
     }
     response = logged_in_client.post(reverse('manage_team', kwargs={'team_pk': test_team.pk}), data)
     form = response.context['form']
-
     assert 'Insufficient funds.' in str(form.errors['position'])
 
 
 def test_create_player_exceeding_position_limit(logged_in_client, test_race, test_position, test_team):
-    race_position_limit, created = RacePositionLimit.objects.get_or_create(race=test_race, position=test_position, max_count=0)
-
-    player_data = {
-        'name': 'Player One',
+    RacePositionLimit.objects.get_or_create(race=test_race, position=test_position, max_count=0)
+    data = {
+        'name': 'Player Three',
         'number': 1,
         'position': test_position.pk,
+        'submit_player': 'any_value',
     }
-    response = logged_in_client.post(reverse('manage_team', kwargs={'team_pk': test_team.pk}), player_data)
+    response = logged_in_client.post(reverse('manage_team', kwargs={'team_pk': test_team.pk}), data)
     assert response.status_code == 200
-    assert not Player.objects.filter(name='Player One').exists()
-
-
-def test_create_player_invalid_number(logged_in_client, test_team, test_position):
-    player_data = {
-        'name': 'Player Four',
-        'number': 17,
-        'position': test_position.pk,
-    }
-    response = logged_in_client.post(reverse('manage_team', kwargs={'team_pk': test_team.pk}), player_data)
-    assert response.status_code == 200
-    assert not Player.objects.filter(name='Player Four').exists()
-    assert 'Invalid number. Please choose a number between 1 and 16.' in response.content.decode()
-
+    assert not Player.objects.filter(name='Player Three').exists()

@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+
+<a href="{% url 'create_team' %}">Create a Team</a>
+<form method="POST" action="{% url 'select_team' %}">
+    {% csrf_token %}
+    {{ select_team_form.as_p }}
+    <input type="submit" value="Manage Selected Team">
+</form>
+{% endblock %}

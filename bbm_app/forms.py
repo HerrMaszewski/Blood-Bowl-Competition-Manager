@@ -68,7 +68,7 @@ class CreateTeamForm(forms.ModelForm):
         fields = ['team_name', 'race']
 
 
-class ManageTeamForm(forms.ModelForm):
+class AddPlayerForm(forms.ModelForm):
     class Meta:
         model = Player
         fields = ['name', 'number', 'position']
@@ -79,7 +79,11 @@ class ManageTeamForm(forms.ModelForm):
         if self.team:
             self.fields['position'].queryset = Position.objects.filter(race=self.team.race)
             taken_numbers = Player.objects.filter(player_team=self.team).values_list('number', flat=True)
-            self.fields['number'].choices = [(i, i) for i in range(1, 17) if i not in taken_numbers]
+            number_choices = [(i, i) for i in range(1, 17) if i not in taken_numbers]
+            self.fields['number'] = forms.ChoiceField(
+                choices=number_choices,
+                label='Number',
+            )
 
     def clean(self):
         cleaned_data = super().clean()
@@ -92,12 +96,11 @@ class ManageTeamForm(forms.ModelForm):
             if position_count >= race_position_limit.max_count:
                 self.add_error('position', 'Maximum number of this position has been reached for the team.')
 
-    def clean_number(self):
-        number = self.cleaned_data.get('number')
-        if number and (number < 1 or number > 16):
-            raise forms.ValidationError("Invalid number. Please choose a number between 1 and 16.")
-        if number and Player.objects.filter(player_team=self.team, number=number).exists():
-            raise forms.ValidationError("This number is already in use.")
-        return number
 
+class SelectTeamForm(forms.Form):
+    team = forms.ModelChoiceField(queryset=None)
 
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+        self.fields['team'].queryset = Team.objects.filter(coach=user)

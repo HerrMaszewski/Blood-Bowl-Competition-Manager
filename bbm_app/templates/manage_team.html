@@ -2,9 +2,12 @@
 
 {% load tagi %}
 
+
 {% block content %}
-<h1>{{ team.team_name }}</h1>
-<h2>Treasury: {{ team.treasury }}</h2>
+<div class="content content-scrollable">
+    <h1>{{ team.team_name }}</h1>
+    <h2>Treasury: {{ team.treasury }}</h2>
+    <h2>Current Team Value: {{ team.ctv|to_k }}</h2>
 
 <table>
     <tr>
@@ -30,9 +33,9 @@
         <td>{{ player.position.name }}</td>
         <td>{{ player.movement }}</td>
         <td>{{ player.strength }}</td>
-        <td>{{ player.agility }}</td>
-        <td>{{ player.passing }}</td>
-        <td>{{ player.armor }}</td>
+        <td>{{ player.agility }}+</td>
+        <td>{% if player.passing != None %}{{ player.passing|add:"+0" }}+{% else %}-{% endif %}</td>
+        <td>{{ player.armor }}+</td>
         <td>{{ player.niggling_injuries }}</td>
         <td>
         {% for skill in player.skills.all %}
@@ -50,16 +53,40 @@
     {% endfor %}
 </table>
 
+<h3>Fan Factor: {{ team.fan_factor }}</h3>
+
+<h3>Apothecary: {% if team.apothecary %}Yes{% else %}No{% endif %}</h3>
+{% if team.race.has_apothecary and not team.apothecary %}
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" name="add_apothecary">Add Apothecary</button>
+</form>
+{% endif %}
+
+<h3>Rerolls: {{ team.team_re_roll }}</h3>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" name="add_reroll">Add Reroll</button>
+</form>
+
+<h3>Assistant Coaches: {{ team.assistant_coaches }}</h3>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" name="add_assistant_coach">Add Assistant Coach</button>
+</form>
+
+<h3>Cheerleaders: {{ team.cheerleaders }}</h3>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" name="add_cheerleader">Add Cheerleader</button>
+</form>
+
 <h2>Add a new player</h2>
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Add Player</button>
+    {{ add_player_form.as_p }}
+    <button type="submit" name="submit_player">Add Player</button>
 </form>
-{% endblock %}
 
-{% if form_errors %}
-    <div class="alert alert-danger">
-        {{ form_errors }}
-    </div>
-{% endif %}
+</div>
+{% endblock %}

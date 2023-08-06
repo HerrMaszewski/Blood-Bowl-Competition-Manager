@@ -112,9 +112,35 @@ class Team(models.Model):
     cheerleaders = models.IntegerField(default=0)
     apothecary = models.BooleanField(default=False)
     ctv = models.PositiveIntegerField(default=0)
+    wins = models.PositiveIntegerField(default=0)
+    losses = models.PositiveIntegerField(default=0)
+    draws = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.team_name
+
+    @property
+    def CTV(self):
+        if self.pk is None:
+            return 0  # or some other default value
+
+        player_value = sum(player.value for player in self.players.all() if player.status == 'active')
+        reroll_value = self.team_re_roll * self.race.reroll_cost
+        apothecary_value = 50000 if self.apothecary else 0
+        assistant_coaches_value = self.assistant_coaches * 10000
+        cheerleaders_value = self.cheerleaders * 10000
+        total = player_value + reroll_value + apothecary_value + assistant_coaches_value + cheerleaders_value
+        return total
+
+    @property
+    def total_matches(self):
+        return self.wins + self.losses + self.draws
+
+    @property
+    def reroll_cost(self):
+        if self.total_matches > 0:
+            return self.race.reroll_cost * 2
+        return self.race.reroll_cost
 
     def get_available_positions(self):
         positions = []
@@ -129,35 +155,8 @@ class Team(models.Model):
 
         return positions
 
-    def fill_journeyman(self):
-        active_players = self.players.filter(is_active=True)
-
-        if active_players.count() < 11:
-            cheapest_position = self.race.positions.order_by('cost').first()
-
-            for i in range(11 - active_players.count()):
-                taken_numbers = self.players.values_list('number', flat=True)
-                available_numbers = set(range(1, 17)) - set(taken_numbers)
-                player_number = min(available_numbers)
-
-                journeyman = Player.objects.create(
-                    name=f'Journeyman {i+1}',
-                    position=cheapest_position,
-                    is_journeyman=True,
-                    number=player_number,
-                    status='active',
-                )
-                self.players.add(journeyman)
-
-    def calculate_ctv(self):
-        active_players = self.players.filter(status='active')
-        return sum(player.value for player in active_players)
-
-    def update_ctv(self):
-        self.ctv = self.calculate_ctv()
-        self.save()
-
     def save(self, *args, **kwargs):
+        self.ctv = self.CTV
         super().save(*args, **kwargs)
 
 
@@ -188,7 +187,7 @@ class Player(models.Model):
     strength = models.IntegerField(default=0)
     agility = models.IntegerField(default=0)
     armor = models.IntegerField(default=0)
-    passing = models.IntegerField(default=0)
+    passing = models.IntegerField(default=0, null=True)
     skills = models.ManyToManyField(Skill, related_name='current_skills')
     traits = models.ManyToManyField(Trait)
     primary_skill_categories = models.ManyToManyField(SkillCategory, related_name='primary_players')
@@ -208,7 +207,25 @@ class Player(models.Model):
     def check_level_up(self):
         pass
 
-
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
+    def fill_journeyman(self):
+        active_players = self.players.filter(is_active=True)
+
+        if active_players.count() < 11:
+            cheapest_position = self.race.positions.order_by('cost').first()
+
+            for i in range(11 - active_players.count()):
+                taken_numbers = self.players.values_list('number', flat=True)
+                available_numbers = set(range(1, 17)) - set(taken_numbers)
+                player_number = min(available_numbers)
+
+                journeyman = Player.objects.create(
+                    name=f'Journeyman {i+1}',
+                    position=cheapest_position,
+                    is_journeyman=True,
+                    number=player_number,
+                    status='active',
+                )
+                self.players.add(journeyman)

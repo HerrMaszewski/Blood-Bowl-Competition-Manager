@@ -45,7 +45,7 @@ def logged_in_client(client, test_user):
 
 
 @pytest.fixture
-def test_position(test_race): # Assuming you have a test_race fixture
+def test_position(test_race):
     return Position.objects.create(
         name='Test Position',
         movement=6,
@@ -54,7 +54,7 @@ def test_position(test_race): # Assuming you have a test_race fixture
         armor=8,
         passing=2,
         cost=50000,
-        race=test_race, # Associate with a specific race
+        race=test_race,
     )
 
 
