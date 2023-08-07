@@ -2,6 +2,7 @@ import pytest
 from django.urls import reverse
 from django.contrib.auth.models import User
 from .models import Coach, Team, RacePositionLimit, Player
+from .forms import SelectTeamForm
 
 
 @pytest.mark.django_db
@@ -130,3 +131,77 @@ def test_create_player_exceeding_position_limit(logged_in_client, test_race, tes
     response = logged_in_client.post(reverse('manage_team', kwargs={'team_pk': test_team.pk}), data)
     assert response.status_code == 200
     assert not Player.objects.filter(name='Player Three').exists()
+
+
+def test_add_reroll(logged_in_client, test_team):
+    test_team.treasury = test_team.reroll_cost
+    test_team.team_re_roll = 0
+    test_team.save()
+
+    response = logged_in_client.post(reverse('manage_team', args=[test_team.pk]), {'add_reroll': ''})
+    test_team.refresh_from_db()
+
+    assert response.status_code == 200
+    assert test_team.treasury == 0
+    assert test_team.team_re_roll == 1
+
+
+def test_add_apothecary(logged_in_client, test_team):
+    test_team.treasury = 50000
+    test_team.apothecary = False
+    test_team.race.has_apothecary = True
+    test_team.save()
+
+    response = logged_in_client.post(reverse('manage_team', args=[test_team.pk]), {'add_apothecary': ''})
+    test_team.refresh_from_db()
+
+    assert response.status_code == 200
+    assert test_team.treasury == 0
+    assert test_team.apothecary is True
+
+
+def test_add_assistant_coach(logged_in_client, test_team):
+    test_team.treasury = 10000
+    test_team.assistant_coaches = 0
+    test_team.save()
+
+    response = logged_in_client.post(reverse('manage_team', args=[test_team.pk]), {'add_assistant_coach': ''})
+    test_team.refresh_from_db()
+
+    assert response.status_code == 200
+    assert test_team.treasury == 0
+    assert test_team.assistant_coaches == 1
+
+
+def test_add_cheerleader(logged_in_client, test_team):
+    test_team.treasury = 10000
+    test_team.cheerleaders = 0
+    test_team.save()
+
+    response = logged_in_client.post(reverse('manage_team', args=[test_team.pk]), {'add_cheerleader': ''})
+    test_team.refresh_from_db()
+
+    assert response.status_code == 200
+    assert test_team.treasury == 0
+    assert test_team.cheerleaders == 1
+
+
+def test_main_page_view(logged_in_client):
+    response = logged_in_client.get(reverse('main'))
+    assert response.status_code == 200
+    assert isinstance(response.context['select_team_form'], SelectTeamForm)
+
+
+@pytest.mark.django_db
+def test_select_team_view(logged_in_client, test_team):
+    response = logged_in_client.get(reverse('select_team'))
+    assert response.status_code == 200
+    form = response.context.get('form')
+    assert form is not None
+    assert isinstance(form, SelectTeamForm)
+    form_data = {'team': test_team.pk}
+    form = SelectTeamForm(data=form_data, user=test_team.coach)
+    assert form.is_valid()
+    response = logged_in_client.post(reverse('select_team'), data=form_data)
+    assert response.status_code == 302
+    assert response.url == reverse('manage_team', args=[test_team.pk])

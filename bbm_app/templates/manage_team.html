@@ -2,6 +2,9 @@
 
 {% load tagi %}
 
+{% block title %}
+Manage Team
+{% endblock title %}
 
 {% block content %}
 <div class="content content-scrollable">
@@ -63,7 +66,7 @@
 </form>
 {% endif %}
 
-<h3>Rerolls: {{ team.team_re_roll }}</h3>
+<h3>Rerolls: {{ team.team_re_roll }} Reroll cost: {{ team.reroll_cost|to_k }}</h3>
 <form method="post">
     {% csrf_token %}
     <button type="submit" name="add_reroll">Add Reroll</button>

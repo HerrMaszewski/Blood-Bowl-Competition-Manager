@@ -73,8 +73,8 @@ class ManageTeamView(LoginRequiredMixin, FormView):
     def post(self, request, *args, **kwargs):
         add_player_form = AddPlayerForm(request.POST or None, team=self.team) if 'submit_player' in request.POST else AddPlayerForm(team=self.team)
         if 'add_reroll' in request.POST:
-            if self.team.treasury >= self.team.race.reroll_cost and self.team.team_re_roll < 8:
-                self.team.treasury -= self.team.race.reroll_cost
+            if self.team.treasury >= self.team.reroll_cost and self.team.team_re_roll < 8:
+                self.team.treasury -= self.team.reroll_cost
                 self.team.team_re_roll += 1
                 self.team.save()
 

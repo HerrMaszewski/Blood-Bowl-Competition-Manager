@@ -17,13 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from bbm_app.views import MainPageView, LoginView, RegistrationView, CreateTeamView, ManageTeamView
+from bbm_app.views import MainPageView, LoginView, RegistrationView, CreateTeamView, ManageTeamView, LogoutView, SelectTeamView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main/', MainPageView.as_view(), name='main'),
+    path('', MainPageView.as_view(), name='main'),
     path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
     path('registration/', RegistrationView.as_view(), name='registration'),
     path('team_creation/', CreateTeamView.as_view(), name='create_team'),
     path('manage_team/<int:team_pk>/', ManageTeamView.as_view(), name='manage_team'),
+    path('select_team/', SelectTeamView.as_view(), name='select_team'),
 ]

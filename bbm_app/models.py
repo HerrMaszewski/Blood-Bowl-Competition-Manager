@@ -112,7 +112,7 @@ class Team(models.Model):
     cheerleaders = models.IntegerField(default=0)
     apothecary = models.BooleanField(default=False)
     ctv = models.PositiveIntegerField(default=0)
-    wins = models.PositiveIntegerField(default=0)
+    wins = models.IntegerField(default=0)
     losses = models.PositiveIntegerField(default=0)
     draws = models.PositiveIntegerField(default=0)
 
@@ -122,7 +122,7 @@ class Team(models.Model):
     @property
     def CTV(self):
         if self.pk is None:
-            return 0  # or some other default value
+            return 0
 
         player_value = sum(player.value for player in self.players.all() if player.status == 'active')
         reroll_value = self.team_re_roll * self.race.reroll_cost
@@ -141,19 +141,6 @@ class Team(models.Model):
         if self.total_matches > 0:
             return self.race.reroll_cost * 2
         return self.race.reroll_cost
-
-    def get_available_positions(self):
-        positions = []
-        race_positions = self.race.positions.all()
-
-        for position in race_positions:
-            position_limit = RacePositionLimit.objects.get(race=self.race, position=position).max_count
-            player_count = self.players.filter(position=position).count()
-
-            if player_count < position_limit:
-                positions.append(position.id)
-
-        return positions
 
     def save(self, *args, **kwargs):
         self.ctv = self.CTV
@@ -210,22 +197,24 @@ class Player(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-    def fill_journeyman(self):
-        active_players = self.players.filter(is_active=True)
 
-        if active_players.count() < 11:
-            cheapest_position = self.race.positions.order_by('cost').first()
 
-            for i in range(11 - active_players.count()):
-                taken_numbers = self.players.values_list('number', flat=True)
-                available_numbers = set(range(1, 17)) - set(taken_numbers)
-                player_number = min(available_numbers)
-
-                journeyman = Player.objects.create(
-                    name=f'Journeyman {i+1}',
-                    position=cheapest_position,
-                    is_journeyman=True,
-                    number=player_number,
-                    status='active',
-                )
-                self.players.add(journeyman)
+# def fill_journeyman(self):
+    #     active_players = self.players.filter(is_active=True)
+    #
+    #     if active_players.count() < 11:
+    #         cheapest_position = self.race.positions.order_by('cost').first()
+    #
+    #         for i in range(11 - active_players.count()):
+    #             taken_numbers = self.players.values_list('number', flat=True)
+    #             available_numbers = set(range(1, 17)) - set(taken_numbers)
+    #             player_number = min(available_numbers)
+    #
+    #             journeyman = Player.objects.create(
+    #                 name=f'Journeyman {i+1}',
+    #                 position=cheapest_position,
+    #                 is_journeyman=True,
+    #                 number=player_number,
+    #                 status='active',
+    #             )
+    #             self.players.add(journeyman)

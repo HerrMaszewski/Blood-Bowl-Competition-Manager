@@ -38,8 +38,8 @@ def test_race(db):
 
 
 @pytest.fixture
-def logged_in_client(client, test_user):
-    username, password = test_user
+def logged_in_client(client, test_coach):
+    username, password = test_coach.user.username, 'password123'
     client.login(username=username, password=password)
     return client
 
@@ -66,3 +66,5 @@ def test_team(test_coach, test_race):
 @pytest.fixture
 def test_race_position_limit(test_race, test_position):
     return RacePositionLimit.objects.create(race=test_race, position=test_position, max_count=4)
+
+
